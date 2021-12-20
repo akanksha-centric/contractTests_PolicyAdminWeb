@@ -1,0 +1,72 @@
+{
+  "consumer": {
+    "name": "AccountAPI_consumer"
+  },
+  "provider": {
+    "name": "AccountAPI_provider"
+  },
+  "interactions": [
+    {
+      "description": "a request for an account with ID 9348878860",
+      "providerState": "Has an contact details with ID 9348878860",
+      "request": {
+        "method": "GET",
+        "path": "/v1/accounts/9348878860/contactDetails",
+        "headers": {
+          "Authorization": "Bearer token"
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8"
+        },
+        "body": {
+          "phoneNumbers": [
+
+          ],
+          "emails": [
+            {
+              "emailId": 9563231,
+              "emailAddress": "hgfh@ytuy.com"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "description": "a request for invalid account",
+      "providerState": "When a call is made to wrong account",
+      "request": {
+        "method": "GET",
+        "path": "/v1/accounts/93488788/contactDetails",
+        "headers": {
+          "Authorization": "Bearer token"
+        }
+      },
+      "response": {
+        "status": 404,
+        "headers": {
+        }
+      }
+    },
+    {
+      "description": "a request without authentication token",
+      "providerState": "When user is not authorized",
+      "request": {
+        "method": "GET",
+        "path": "/v1/accounts/9348878860/contactDetails"
+      },
+      "response": {
+        "status": 401,
+        "headers": {
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}

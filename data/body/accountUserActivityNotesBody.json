@@ -1,0 +1,28 @@
+{
+    "isExpanded":false,
+    "showMore":false,
+    "isSelected":false,
+    "displayCommentBox":false,
+    "displayActivityDropdown":false,
+    "isReferralEditing":false,
+    "datePipe":{
+       "locale":"en-US"
+    },
+    "activityType":"Note",
+    "activityDtTm":"2021-12-01T16:28:31.000Z",
+    "note":{
+       "isEditing":false,
+       "datePipe":{
+          "locale":"en-US"
+       },
+       "isEdited":false,
+       "editedDate":null,
+       "editedTime":null,
+       "notes":"<p>test pact</p>"
+    },
+    "contacts":[],
+    "activityFlag":"Normal",
+    "dueDate":null,
+    "sendTo":"Services"
+
+}

@@ -1,0 +1,141 @@
+I, [2021-12-20T06:32:38.428006 #17868]  INFO -- : Registered expected interaction GET /v1/accounts/9348878860/contactDetails
+D, [2021-12-20T06:32:38.429006 #17868] DEBUG -- : {
+  "description": "a request for an account with ID 9348878860",
+  "providerState": "Has an contact details with ID 9348878860",
+  "request": {
+    "method": "GET",
+    "path": "/v1/accounts/9348878860/contactDetails",
+    "headers": {
+      "Authorization": "Bearer token"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    "body": {
+      "phoneNumbers": [
+
+      ],
+      "emails": [
+        {
+          "emailId": 9563231,
+          "emailAddress": "hgfh@ytuy.com"
+        }
+      ]
+    }
+  },
+  "metadata": null
+}
+I, [2021-12-20T06:32:38.439010 #17868]  INFO -- : Received request GET /v1/accounts/9348878860/contactDetails
+D, [2021-12-20T06:32:38.439010 #17868] DEBUG -- : {
+  "path": "/v1/accounts/9348878860/contactDetails",
+  "query": "",
+  "method": "get",
+  "headers": {
+    "Host": "localhost:65079",
+    "Accept-Encoding": "gzip, deflate",
+    "User-Agent": "node-superagent/3.8.3",
+    "Authorization": "Bearer token",
+    "Connection": "close",
+    "Version": "HTTP/1.1"
+  }
+}
+I, [2021-12-20T06:32:38.440007 #17868]  INFO -- : Found matching response for GET /v1/accounts/9348878860/contactDetails
+D, [2021-12-20T06:32:38.440007 #17868] DEBUG -- : {
+  "status": 200,
+  "headers": {
+    "Content-Type": "application/json; charset=utf-8"
+  },
+  "body": {
+    "phoneNumbers": [
+
+    ],
+    "emails": [
+      {
+        "emailId": 9563231,
+        "emailAddress": "hgfh@ytuy.com"
+      }
+    ]
+  }
+}
+I, [2021-12-20T06:32:38.452011 #17868]  INFO -- : Verifying - interactions matched
+I, [2021-12-20T06:32:38.463010 #17868]  INFO -- : Cleared interactions
+I, [2021-12-20T06:32:38.474013 #17868]  INFO -- : Registered expected interaction GET /v1/accounts/93488788/contactDetails
+D, [2021-12-20T06:32:38.474013 #17868] DEBUG -- : {
+  "description": "a request for invalid account",
+  "providerState": "When a call is made to wrong account",
+  "request": {
+    "method": "GET",
+    "path": "/v1/accounts/93488788/contactDetails",
+    "headers": {
+      "Authorization": "Bearer token"
+    }
+  },
+  "response": {
+    "status": 404,
+    "headers": {
+    }
+  },
+  "metadata": null
+}
+I, [2021-12-20T06:32:38.487012 #17868]  INFO -- : Received request GET /v1/accounts/93488788/contactDetails
+D, [2021-12-20T06:32:38.487012 #17868] DEBUG -- : {
+  "path": "/v1/accounts/93488788/contactDetails",
+  "query": "",
+  "method": "get",
+  "headers": {
+    "Host": "localhost:65079",
+    "Accept-Encoding": "gzip, deflate",
+    "User-Agent": "node-superagent/3.8.3",
+    "Authorization": "Bearer token",
+    "Connection": "close",
+    "Version": "HTTP/1.1"
+  }
+}
+I, [2021-12-20T06:32:38.487012 #17868]  INFO -- : Found matching response for GET /v1/accounts/93488788/contactDetails
+D, [2021-12-20T06:32:38.487012 #17868] DEBUG -- : {
+  "status": 404,
+  "headers": {
+  }
+}
+I, [2021-12-20T06:32:38.497015 #17868]  INFO -- : Verifying - interactions matched
+I, [2021-12-20T06:32:38.508017 #17868]  INFO -- : Cleared interactions
+I, [2021-12-20T06:32:38.519018 #17868]  INFO -- : Registered expected interaction GET /v1/accounts/9348878860/contactDetails
+D, [2021-12-20T06:32:38.519018 #17868] DEBUG -- : {
+  "description": "a request without authentication token",
+  "providerState": "When user is not authorized",
+  "request": {
+    "method": "GET",
+    "path": "/v1/accounts/9348878860/contactDetails"
+  },
+  "response": {
+    "status": 401,
+    "headers": {
+    }
+  },
+  "metadata": null
+}
+I, [2021-12-20T06:32:38.530019 #17868]  INFO -- : Received request GET /v1/accounts/9348878860/contactDetails
+D, [2021-12-20T06:32:38.530019 #17868] DEBUG -- : {
+  "path": "/v1/accounts/9348878860/contactDetails",
+  "query": "",
+  "method": "get",
+  "headers": {
+    "Host": "localhost:65079",
+    "Accept-Encoding": "gzip, deflate",
+    "User-Agent": "node-superagent/3.8.3",
+    "Connection": "close",
+    "Version": "HTTP/1.1"
+  }
+}
+I, [2021-12-20T06:32:38.530019 #17868]  INFO -- : Found matching response for GET /v1/accounts/9348878860/contactDetails
+D, [2021-12-20T06:32:38.530019 #17868] DEBUG -- : {
+  "status": 401,
+  "headers": {
+  }
+}
+I, [2021-12-20T06:32:38.543020 #17868]  INFO -- : Verifying - interactions matched
+I, [2021-12-20T06:32:38.552022 #17868]  INFO -- : Cleared interactions
+I, [2021-12-20T06:32:38.563025 #17868]  INFO -- : Writing pact for AccountAPI_provider to C:/contractTests_PolicyAdminWeb/pacts/accountapi_consumer-accountapi_provider.json
