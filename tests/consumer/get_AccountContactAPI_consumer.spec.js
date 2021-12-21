@@ -15,8 +15,8 @@ const { response } = require("express");
 
 describe("Account Contact Details API consumer test", () => {
     const mockprovider = new Pact({
-        consumer: "AccountAPI_consumer",
-        provider: "AccountAPI_provider",
+        consumer: "AccountAPI_consumer_contact",
+        provider: "AccountAPI_provider_contact",
         log: path.resolve(process.cwd(), "logs", "mockserver-integration.log"),
         dir: path.resolve(process.cwd(), "pacts"),
         spec : 2,
@@ -51,26 +51,6 @@ describe("Account Contact Details API consumer test", () => {
             const suggestedAccount = getAccount("/v1/accounts/9348878860/contactDetails")
             expect(suggestedAccount).to.eventually.have.deep.property("emails[0].emailAddress","hgfh@ytuy.com")
             .notify(done)
-        })
-    })
-
-    describe("When a call is made to wrong account which is not present in database", () => {
-        before(() => mockprovider.addInteraction({
-            state: "When a call is made to wrong account",
-            uponReceiving: "a request for invalid account",
-            withRequest: {
-                method: "GET",
-                path: "/v1/accounts/93488788/contactDetails",
-                headers: { Authorization: "Bearer token" },
-            },
-            willRespondWith: {
-                status: 404,
-            },
-        })
-    )
-        it("It will return a 404 Not Found response", done => {
-            const suggestedAccount = getAccount("/v1/accounts/93488788/contactDetails")
-            expect(suggestedAccount).to.eventually.be.a("null").notify(done)
         })
     })
 

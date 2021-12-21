@@ -1,56 +1,29 @@
 {
-    "activityId": 9408714352,
-    "activityType": "Note",
-    "activityFlag": "Normal",
-    "objectType": "Account",
-    "productName": "",
-    "note": {
-      "noteId": 9408714353,
-      "notes": "<p>test pact</p>",
-      "createdDtTm": "2021-12-20T01:24:42.4066667",
-      "updatedDtTm": "2021-12-20T01:24:42.4066667",
-      "updatedBy": {
-        "userId": "1d071ec3-15ff-4e3f-94e5-7991d4ff04ef",
-        "agencyAMSId": null,
-        "userType": null,
-        "userName": "Akanksha Sharma",
-        "systemName": null,
-        "department": "Information Technology (Contract Developer)",
-        "title": null
-      },
-      "noteType": "ActivityNote",
-      "status": "Added"
-    },
-    "comments": [],
-    "createdBy": {
-      "userId": "1d071ec3-15ff-4e3f-94e5-7991d4ff04ef",
-      "agencyAMSId": null,
-      "userType": null,
-      "userName": "Akanksha Sharma",
-      "systemName": null,
-      "department": "Information Technology (Contract Developer)",
-      "title": null
-    },
-    "createdDtTm": "2021-12-20T01:24:42.3",
-    "attachments": null,
-    "policyIdentifier": null,
-    "policyActivityId": null,
-    "insuranceItemId": null,
-    "policyItemId": null,
-    "policyItemType": null,
-    "updatedDtTm": "2021-12-20T01:24:42.3",
-    "activityDtTm": "2021-12-01T16:28:31",
-    "contacts": null,
-    "noteActivityId": 9408714355,
-    "sendTo": "Services",
-    "callActivityId": null,
-    "isCallInBound": null,
-    "emailActivityId": null,
-    "emailSubject": null,
-    "isEmailInBound": null,
-    "meetingActivityId": null,
-    "taskActivityId": null,
-    "taskActivityReference": null,
-    "taskType": null,
-    "dueDate": null
-  }
+  "isExpanded":false,
+  "showMore":false,
+  "isSelected":false,
+  "displayCommentBox":false,
+  "displayActivityDropdown":false,
+  "isReferralEditing":false,
+  "datePipe":{
+     "locale":"en-US"
+  },
+  "activityType":"Note",
+  "activityDtTm":"2021-12-01T16:28:31.000Z",
+  "note":{
+     "isEditing":false,
+     "datePipe":{
+        "locale":"en-US"
+     },
+     "isEdited":false,
+     "editedDate":null,
+     "editedTime":null,
+     "notes":"<p>test pact</p>"
+  },
+  "contacts":[
+     
+  ],
+  "activityFlag":"Normal",
+  "dueDate":null,
+  "sendTo":"Services"
+}

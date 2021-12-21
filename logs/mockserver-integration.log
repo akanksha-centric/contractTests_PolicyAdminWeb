@@ -1,12 +1,42 @@
-I, [2021-12-20T06:32:38.428006 #17868]  INFO -- : Registered expected interaction GET /v1/accounts/9348878860/contactDetails
-D, [2021-12-20T06:32:38.429006 #17868] DEBUG -- : {
-  "description": "a request for an account with ID 9348878860",
-  "providerState": "Has an contact details with ID 9348878860",
+I, [2021-12-21T13:54:13.415189 #15100]  INFO -- : Registered expected interaction POST /v1/accounts/9404268316/contactDetails/user_activities/notes
+D, [2021-12-21T13:54:13.415699 #15100] DEBUG -- : {
+  "description": "a request to create a new activity note",
+  "providerState": "a request to create a new activity note",
   "request": {
-    "method": "GET",
-    "path": "/v1/accounts/9348878860/contactDetails",
+    "method": "POST",
+    "path": "/v1/accounts/9404268316/contactDetails/user_activities/notes",
     "headers": {
+      "Content-Type": "application/json; charset=utf-8",
       "Authorization": "Bearer token"
+    },
+    "body": {
+      "isExpanded": false,
+      "showMore": false,
+      "isSelected": false,
+      "displayCommentBox": false,
+      "displayActivityDropdown": false,
+      "isReferralEditing": false,
+      "datePipe": {
+        "locale": "en-US"
+      },
+      "activityType": "Note",
+      "activityDtTm": "2021-12-01T16:28:31.000Z",
+      "note": {
+        "isEditing": false,
+        "datePipe": {
+          "locale": "en-US"
+        },
+        "isEdited": false,
+        "editedDate": null,
+        "editedTime": null,
+        "notes": "<p>test pact</p>"
+      },
+      "contacts": [
+
+      ],
+      "activityFlag": "Normal",
+      "dueDate": null,
+      "sendTo": "Services"
     }
   },
   "response": {
@@ -15,26 +45,107 @@ D, [2021-12-20T06:32:38.429006 #17868] DEBUG -- : {
       "Content-Type": "application/json; charset=utf-8"
     },
     "body": {
-      "phoneNumbers": [
+      "json_class": "Pact::SomethingLike",
+      "contents": {
+        "activityId": 9408850982,
+        "activityType": "Note",
+        "activityFlag": "Normal",
+        "objectType": "Account",
+        "productName": "",
+        "note": {
+          "noteId": 9408850983,
+          "notes": "<p>test pact 2</p>",
+          "createdDtTm": "2021-12-21T13:44:16.8033333",
+          "updatedDtTm": "2021-12-21T13:44:16.8033333",
+          "updatedBy": {
+            "userId": "1d071ec3-15ff-4e3f-94e5-7991d4ff04ef",
+            "agencyAMSId": null,
+            "userType": null,
+            "userName": "Akanksha Sharma",
+            "systemName": null,
+            "department": "Information Technology (Contract Developer)",
+            "title": null
+          },
+          "noteType": "ActivityNote",
+          "status": "Added"
+        },
+        "comments": [
 
-      ],
-      "emails": [
-        {
-          "emailId": 9563231,
-          "emailAddress": "hgfh@ytuy.com"
-        }
-      ]
+        ],
+        "createdBy": {
+          "userId": "1d071ec3-15ff-4e3f-94e5-7991d4ff04ef",
+          "agencyAMSId": null,
+          "userType": null,
+          "userName": "Akanksha Sharma",
+          "systemName": null,
+          "department": "Information Technology (Contract Developer)",
+          "title": null
+        },
+        "createdDtTm": "2021-12-21T13:44:16.5",
+        "attachments": null,
+        "policyIdentifier": null,
+        "policyActivityId": null,
+        "insuranceItemId": null,
+        "policyItemId": null,
+        "policyItemType": null,
+        "updatedDtTm": "2021-12-21T13:44:16.5",
+        "activityDtTm": "2021-12-01T16:28:31",
+        "contacts": null,
+        "noteActivityId": 9408850985,
+        "sendTo": "Services",
+        "callActivityId": null,
+        "isCallInBound": null,
+        "emailActivityId": null,
+        "emailSubject": null,
+        "isEmailInBound": null,
+        "meetingActivityId": null,
+        "taskActivityId": null,
+        "taskActivityReference": null,
+        "taskType": null,
+        "dueDate": null
+      }
     }
   },
   "metadata": null
 }
-I, [2021-12-20T06:32:38.439010 #17868]  INFO -- : Received request GET /v1/accounts/9348878860/contactDetails
-D, [2021-12-20T06:32:38.439010 #17868] DEBUG -- : {
-  "path": "/v1/accounts/9348878860/contactDetails",
+I, [2021-12-21T13:54:13.447511 #15100]  INFO -- : Received request POST /v1/accounts/9404268316/contactDetails/user_activities/notes
+D, [2021-12-21T13:54:13.447511 #15100] DEBUG -- : {
+  "path": "/v1/accounts/9404268316/contactDetails/user_activities/notes",
   "query": "",
-  "method": "get",
+  "method": "post",
+  "body": {
+    "isExpanded": false,
+    "showMore": false,
+    "isSelected": false,
+    "displayCommentBox": false,
+    "displayActivityDropdown": false,
+    "isReferralEditing": false,
+    "datePipe": {
+      "locale": "en-US"
+    },
+    "activityType": "Note",
+    "activityDtTm": "2021-12-01T16:28:31.000Z",
+    "note": {
+      "isEditing": false,
+      "datePipe": {
+        "locale": "en-US"
+      },
+      "isEdited": false,
+      "editedDate": null,
+      "editedTime": null,
+      "notes": "<p>test pact</p>"
+    },
+    "contacts": [
+
+    ],
+    "activityFlag": "Normal",
+    "dueDate": null,
+    "sendTo": "Services"
+  },
   "headers": {
-    "Host": "localhost:65079",
+    "Content-Length": "444",
+    "Content-Type": "application/json; charset=utf-8",
+    "Host": "localhost:53198",
     "Accept-Encoding": "gzip, deflate",
     "User-Agent": "node-superagent/3.8.3",
     "Authorization": "Bearer token",
@@ -42,100 +153,74 @@ D, [2021-12-20T06:32:38.439010 #17868] DEBUG -- : {
     "Version": "HTTP/1.1"
   }
 }
-I, [2021-12-20T06:32:38.440007 #17868]  INFO -- : Found matching response for GET /v1/accounts/9348878860/contactDetails
-D, [2021-12-20T06:32:38.440007 #17868] DEBUG -- : {
+I, [2021-12-21T13:54:13.448409 #15100]  INFO -- : Found matching response for POST /v1/accounts/9404268316/contactDetails/user_activities/notes
+D, [2021-12-21T13:54:13.448409 #15100] DEBUG -- : {
   "status": 200,
   "headers": {
     "Content-Type": "application/json; charset=utf-8"
   },
   "body": {
-    "phoneNumbers": [
+    "json_class": "Pact::SomethingLike",
+    "contents": {
+      "activityId": 9408850982,
+      "activityType": "Note",
+      "activityFlag": "Normal",
+      "objectType": "Account",
+      "productName": "",
+      "note": {
+        "noteId": 9408850983,
+        "notes": "<p>test pact 2</p>",
+        "createdDtTm": "2021-12-21T13:44:16.8033333",
+        "updatedDtTm": "2021-12-21T13:44:16.8033333",
+        "updatedBy": {
+          "userId": "1d071ec3-15ff-4e3f-94e5-7991d4ff04ef",
+          "agencyAMSId": null,
+          "userType": null,
+          "userName": "Akanksha Sharma",
+          "systemName": null,
+          "department": "Information Technology (Contract Developer)",
+          "title": null
+        },
+        "noteType": "ActivityNote",
+        "status": "Added"
+      },
+      "comments": [
 
-    ],
-    "emails": [
-      {
-        "emailId": 9563231,
-        "emailAddress": "hgfh@ytuy.com"
-      }
-    ]
-  }
-}
-I, [2021-12-20T06:32:38.452011 #17868]  INFO -- : Verifying - interactions matched
-I, [2021-12-20T06:32:38.463010 #17868]  INFO -- : Cleared interactions
-I, [2021-12-20T06:32:38.474013 #17868]  INFO -- : Registered expected interaction GET /v1/accounts/93488788/contactDetails
-D, [2021-12-20T06:32:38.474013 #17868] DEBUG -- : {
-  "description": "a request for invalid account",
-  "providerState": "When a call is made to wrong account",
-  "request": {
-    "method": "GET",
-    "path": "/v1/accounts/93488788/contactDetails",
-    "headers": {
-      "Authorization": "Bearer token"
+      ],
+      "createdBy": {
+        "userId": "1d071ec3-15ff-4e3f-94e5-7991d4ff04ef",
+        "agencyAMSId": null,
+        "userType": null,
+        "userName": "Akanksha Sharma",
+        "systemName": null,
+        "department": "Information Technology (Contract Developer)",
+        "title": null
+      },
+      "createdDtTm": "2021-12-21T13:44:16.5",
+      "attachments": null,
+      "policyIdentifier": null,
+      "policyActivityId": null,
+      "insuranceItemId": null,
+      "policyItemId": null,
+      "policyItemType": null,
+      "updatedDtTm": "2021-12-21T13:44:16.5",
+      "activityDtTm": "2021-12-01T16:28:31",
+      "contacts": null,
+      "noteActivityId": 9408850985,
+      "sendTo": "Services",
+      "callActivityId": null,
+      "isCallInBound": null,
+      "emailActivityId": null,
+      "emailSubject": null,
+      "isEmailInBound": null,
+      "meetingActivityId": null,
+      "taskActivityId": null,
+      "taskActivityReference": null,
+      "taskType": null,
+      "dueDate": null
     }
-  },
-  "response": {
-    "status": 404,
-    "headers": {
-    }
-  },
-  "metadata": null
-}
-I, [2021-12-20T06:32:38.487012 #17868]  INFO -- : Received request GET /v1/accounts/93488788/contactDetails
-D, [2021-12-20T06:32:38.487012 #17868] DEBUG -- : {
-  "path": "/v1/accounts/93488788/contactDetails",
-  "query": "",
-  "method": "get",
-  "headers": {
-    "Host": "localhost:65079",
-    "Accept-Encoding": "gzip, deflate",
-    "User-Agent": "node-superagent/3.8.3",
-    "Authorization": "Bearer token",
-    "Connection": "close",
-    "Version": "HTTP/1.1"
   }
 }
-I, [2021-12-20T06:32:38.487012 #17868]  INFO -- : Found matching response for GET /v1/accounts/93488788/contactDetails
-D, [2021-12-20T06:32:38.487012 #17868] DEBUG -- : {
-  "status": 404,
-  "headers": {
-  }
-}
-I, [2021-12-20T06:32:38.497015 #17868]  INFO -- : Verifying - interactions matched
-I, [2021-12-20T06:32:38.508017 #17868]  INFO -- : Cleared interactions
-I, [2021-12-20T06:32:38.519018 #17868]  INFO -- : Registered expected interaction GET /v1/accounts/9348878860/contactDetails
-D, [2021-12-20T06:32:38.519018 #17868] DEBUG -- : {
-  "description": "a request without authentication token",
-  "providerState": "When user is not authorized",
-  "request": {
-    "method": "GET",
-    "path": "/v1/accounts/9348878860/contactDetails"
-  },
-  "response": {
-    "status": 401,
-    "headers": {
-    }
-  },
-  "metadata": null
-}
-I, [2021-12-20T06:32:38.530019 #17868]  INFO -- : Received request GET /v1/accounts/9348878860/contactDetails
-D, [2021-12-20T06:32:38.530019 #17868] DEBUG -- : {
-  "path": "/v1/accounts/9348878860/contactDetails",
-  "query": "",
-  "method": "get",
-  "headers": {
-    "Host": "localhost:65079",
-    "Accept-Encoding": "gzip, deflate",
-    "User-Agent": "node-superagent/3.8.3",
-    "Connection": "close",
-    "Version": "HTTP/1.1"
-  }
-}
-I, [2021-12-20T06:32:38.530019 #17868]  INFO -- : Found matching response for GET /v1/accounts/9348878860/contactDetails
-D, [2021-12-20T06:32:38.530019 #17868] DEBUG -- : {
-  "status": 401,
-  "headers": {
-  }
-}
-I, [2021-12-20T06:32:38.543020 #17868]  INFO -- : Verifying - interactions matched
-I, [2021-12-20T06:32:38.552022 #17868]  INFO -- : Cleared interactions
-I, [2021-12-20T06:32:38.563025 #17868]  INFO -- : Writing pact for AccountAPI_provider to C:/contractTests_PolicyAdminWeb/pacts/accountapi_consumer-accountapi_provider.json
+I, [2021-12-21T13:54:13.462377 #15100]  INFO -- : Verifying - interactions matched
+I, [2021-12-21T13:54:13.476719 #15100]  INFO -- : Cleared interactions
+I, [2021-12-21T13:54:13.493156 #15100]  INFO -- : Writing pact for AccountAPI_UserActivityNotes_provider to C:/contractTests_PolicyAdminWeb/pacts/accountapi_useractivitynotes_consumer-accountapi_useractivitynotes_provider.json

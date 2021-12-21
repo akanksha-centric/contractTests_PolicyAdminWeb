@@ -18,14 +18,6 @@ const getAccount = id => {
         .set(authHeader)
         .then(res => res.body, () => null)
 }
-const createApiCall = id => {
-    console.log(`${getApiEndPoint()}${id}`)
-    return request
-      .post(`${getApiEndPoint()}${id}`)
-      .set(authHeader)
-      .send(accountUserActivity)
-      .set("Content-Type", "application/json; charset=utf-8")
-  }
 
 const getErrorAccount = id => {
     return request
@@ -33,9 +25,20 @@ const getErrorAccount = id => {
         .then(res => res.status);
 }
 
+const createApiCall = id => {
+    console.log(`${getApiEndPoint()}${id}`)
+    return request
+      .post(`${getApiEndPoint()}${id}`)
+      .set(authHeader)
+      .send(accountUserActivity)
+      .set("Content-Type", "application/json; charset=utf-8")
+      .then(res => res.body, () => null)
+      
+  }
+
 module.exports = {
     server,
     getAccount,
-    createApiCall,
     getErrorAccount,
+    createApiCall
 }

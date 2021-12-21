@@ -17,67 +17,33 @@
           "Authorization": "Bearer token"
         },
         "body": {
-          "activityId": 9408714352,
-          "activityType": "Note",
-          "activityFlag": "Normal",
-          "objectType": "Account",
-          "productName": "",
-          "note": {
-            "noteId": 9408714353,
-            "notes": "<p>test pact</p>",
-            "createdDtTm": "2021-12-20T01:24:42.4066667",
-            "updatedDtTm": "2021-12-20T01:24:42.4066667",
-            "updatedBy": {
-              "userId": "1d071ec3-15ff-4e3f-94e5-7991d4ff04ef",
-              "agencyAMSId": null,
-              "userType": null,
-              "userName": "Akanksha Sharma",
-              "systemName": null,
-              "department": "Information Technology (Contract Developer)",
-              "title": null
-            },
-            "noteType": "ActivityNote",
-            "status": "Added"
+          "isExpanded": false,
+          "showMore": false,
+          "isSelected": false,
+          "displayCommentBox": false,
+          "displayActivityDropdown": false,
+          "isReferralEditing": false,
+          "datePipe": {
+            "locale": "en-US"
           },
-          "comments": [
+          "activityType": "Note",
+          "activityDtTm": "2021-12-01T16:28:31.000Z",
+          "note": {
+            "isEditing": false,
+            "datePipe": {
+              "locale": "en-US"
+            },
+            "isEdited": false,
+            "editedDate": null,
+            "editedTime": null,
+            "notes": "<p>test pact</p>"
+          },
+          "contacts": [
 
           ],
-          "createdBy": {
-            "userId": "1d071ec3-15ff-4e3f-94e5-7991d4ff04ef",
-            "agencyAMSId": null,
-            "userType": null,
-            "userName": "Akanksha Sharma",
-            "systemName": null,
-            "department": "Information Technology (Contract Developer)",
-            "title": null
-          },
-          "createdDtTm": "2021-12-20T01:24:42.3",
-          "attachments": null,
-          "policyIdentifier": null,
-          "policyActivityId": null,
-          "insuranceItemId": null,
-          "policyItemId": null,
-          "policyItemType": null,
-          "updatedDtTm": "2021-12-20T01:24:42.3",
-          "activityDtTm": "2021-12-01T16:28:31",
-          "contacts": null,
-          "noteActivityId": 9408714355,
-          "sendTo": "Services",
-          "callActivityId": null,
-          "isCallInBound": null,
-          "emailActivityId": null,
-          "emailSubject": null,
-          "isEmailInBound": null,
-          "meetingActivityId": null,
-          "taskActivityId": null,
-          "taskActivityReference": null,
-          "taskType": null,
-          "dueDate": null
-        },
-        "matchingRules": {
-          "$.body": {
-            "match": "type"
-          }
+          "activityFlag": "Normal",
+          "dueDate": null,
+          "sendTo": "Services"
         }
       },
       "response": {
@@ -86,16 +52,16 @@
           "Content-Type": "application/json; charset=utf-8"
         },
         "body": {
-          "activityId": 9408714352,
+          "activityId": 9408850982,
           "activityType": "Note",
           "activityFlag": "Normal",
           "objectType": "Account",
           "productName": "",
           "note": {
-            "noteId": 9408714353,
-            "notes": "<p>test pact</p>",
-            "createdDtTm": "2021-12-20T01:24:42.4066667",
-            "updatedDtTm": "2021-12-20T01:24:42.4066667",
+            "noteId": 9408850983,
+            "notes": "<p>test pact 2</p>",
+            "createdDtTm": "2021-12-21T13:44:16.8033333",
+            "updatedDtTm": "2021-12-21T13:44:16.8033333",
             "updatedBy": {
               "userId": "1d071ec3-15ff-4e3f-94e5-7991d4ff04ef",
               "agencyAMSId": null,
@@ -120,17 +86,17 @@
             "department": "Information Technology (Contract Developer)",
             "title": null
           },
-          "createdDtTm": "2021-12-20T01:24:42.3",
+          "createdDtTm": "2021-12-21T13:44:16.5",
           "attachments": null,
           "policyIdentifier": null,
           "policyActivityId": null,
           "insuranceItemId": null,
           "policyItemId": null,
           "policyItemType": null,
-          "updatedDtTm": "2021-12-20T01:24:42.3",
+          "updatedDtTm": "2021-12-21T13:44:16.5",
           "activityDtTm": "2021-12-01T16:28:31",
           "contacts": null,
-          "noteActivityId": 9408714355,
+          "noteActivityId": 9408850985,
           "sendTo": "Services",
           "callActivityId": null,
           "isCallInBound": null,
@@ -147,86 +113,6 @@
           "$.body": {
             "match": "type"
           }
-        }
-      }
-    },
-    {
-      "description": "a request without authentication token",
-      "providerState": "When user is not authorized",
-      "request": {
-        "method": "POST",
-        "path": "/v1/accounts/9404268316/contactDetails/user_activities/notes",
-        "headers": {
-          "Content-Type": "application/json; charset=utf-8",
-          "Authorization": "Bearer token"
-        },
-        "body": {
-          "activityId": 9408714352,
-          "activityType": "Note",
-          "activityFlag": "Normal",
-          "objectType": "Account",
-          "productName": "",
-          "note": {
-            "noteId": 9408714353,
-            "notes": "<p>test pact</p>",
-            "createdDtTm": "2021-12-20T01:24:42.4066667",
-            "updatedDtTm": "2021-12-20T01:24:42.4066667",
-            "updatedBy": {
-              "userId": "1d071ec3-15ff-4e3f-94e5-7991d4ff04ef",
-              "agencyAMSId": null,
-              "userType": null,
-              "userName": "Akanksha Sharma",
-              "systemName": null,
-              "department": "Information Technology (Contract Developer)",
-              "title": null
-            },
-            "noteType": "ActivityNote",
-            "status": "Added"
-          },
-          "comments": [
-
-          ],
-          "createdBy": {
-            "userId": "1d071ec3-15ff-4e3f-94e5-7991d4ff04ef",
-            "agencyAMSId": null,
-            "userType": null,
-            "userName": "Akanksha Sharma",
-            "systemName": null,
-            "department": "Information Technology (Contract Developer)",
-            "title": null
-          },
-          "createdDtTm": "2021-12-20T01:24:42.3",
-          "attachments": null,
-          "policyIdentifier": null,
-          "policyActivityId": null,
-          "insuranceItemId": null,
-          "policyItemId": null,
-          "policyItemType": null,
-          "updatedDtTm": "2021-12-20T01:24:42.3",
-          "activityDtTm": "2021-12-01T16:28:31",
-          "contacts": null,
-          "noteActivityId": 9408714355,
-          "sendTo": "Services",
-          "callActivityId": null,
-          "isCallInBound": null,
-          "emailActivityId": null,
-          "emailSubject": null,
-          "isEmailInBound": null,
-          "meetingActivityId": null,
-          "taskActivityId": null,
-          "taskActivityReference": null,
-          "taskType": null,
-          "dueDate": null
-        },
-        "matchingRules": {
-          "$.body": {
-            "match": "type"
-          }
-        }
-      },
-      "response": {
-        "status": 401,
-        "headers": {
         }
       }
     }

@@ -1,4 +1,4 @@
-const { server, importData } = require("./provider.js")
+const { server } = require("./provider.js")
 importData()
 
 server.listen(5000, () => {

@@ -6,9 +6,9 @@
   },
   "scripts": {
     "test": "npm run test:consumer && npm run pact:publish && npm run test:provider",
-    "test:consumer": "mocha --exit --timeout 30000 tests/consumer/../*.js",
-    "pact:publish": "npx pact-broker publish ./pacts --consumer-app-version=\"$(npx @pact-foundation/absolute-version)\" --tag AccountAPI --broker-base-url=https://centricconsulting.pactflow.io --broker-password=mg_43dusgdYRUxGStUei-w",
-    "test:provider": "mocha --exit --timeout 30000 tests/provider/get_AccountApi_provider.spec.js",
+    "test:consumer": "mocha --exit --timeout 30000 tests/consumer/post_AccountApi_UserActivityNotes.spec.js",
+    "pact:publish": "npx pact-broker publish ./pacts --consumer-app-version=\"1.0.0\" --tag AccountAPI --broker-base-url=https://centricconsulting.pactflow.io --broker-password=mg_43dusgdYRUxGStUei-w",
+    "test:provider": "mocha --exit --timeout 30000 tests/provider/post_userActivityNotes_provider.spec.js",
     "can-i-deploy": "npm run can-i-deploy:consumer && npm run can-i-deploy:provider",
     "can-i-deploy:consumer": "pact-broker can-i-deploy --pacticipant 'Matching Service' --latest --broker-base-url https://test.pact.dius.com.au --broker-username dXfltyFMgNOFZAxr8io9wJ37iUpY42M --broker-password O5AIZWxelWbLvqMd8PkAVycBJh2Psyg1",
     "can-i-deploy:provider": "pact-broker can-i-deploy --pacticipant 'Animal Profile Service' --latest --broker-base-url https://test.pact.dius.com.au --broker-username dXfltyFMgNOFZAxr8io9wJ37iUpY42M --broker-password O5AIZWxelWbLvqMd8PkAVycBJh2Psyg1",
@@ -31,10 +31,5 @@
     "express-http-proxy": "^1.4.0",
     "mocha": "^8.2.1",
     "superagent": "^3.8.3"
-  },
-  "main": "index.js",
-  "directories": {
-    "test": "tests"
-  },
-  "description": ""
+  }
 }
