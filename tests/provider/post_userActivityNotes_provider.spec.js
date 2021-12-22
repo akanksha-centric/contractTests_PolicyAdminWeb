@@ -9,15 +9,15 @@ const path = require("path")
 
 const SERVER_URL = "http://localhost:5000"
 
-server.listen(5000, () => {
-    activityData()
-    console.log(`Account API Contact Service listening on ${SERVER_URL}`)
-  })
+//  server.listen(5000, () => {
+//     activityData()
+//     console.log(`Account API Contact Service listening on ${SERVER_URL}`)
+//   })
 
 // Verify that the provider meets all consumer expectations
  describe("User activity of Notes API Pact verification", () => {
     it("validates the expectations of Matching Service", () => {
-        let token = "eyJhbGciOiJSUzI1NiIsInR5cCI6ImF0K2p3dCJ9.eyJuYmYiOjE2NDAwNzkwNTAsImV4cCI6MTY0MDA4MjY1MCwiaXNzIjoiaHR0cDovL25lcHR1bmUuY21pcHJvZy5jb20vQ2VudHJhbEFwaUdhdGV3YXkvYXV0aG9yaXphdGlvbnNlcnZlci8iLCJhdWQiOiJnYXRld2F5IiwiY2xpZW50X2lkIjoiNUJCMEJEMzUxQjU0QUYyMzEyMjlBNTk4MUE2QjA5RTgiLCJzdWIiOiJpbnRyYXphY3MwMDEiLCJhdXRoX3RpbWUiOjE2Mzk5ODI4MjIsImlkcCI6Imh0dHA6Ly9wcm90ZXVzLmNtaXByb2cuY29tL0FVdGhvcml6YXRpb25TZXJ2ZXIiLCJnaXZlbl9uYW1lIjoiQWthbmtzaGEiLCJmYW1pbHlfbmFtZSI6IlNoYXJtYSIsImVtYWlsIjoiIiwidW5pcXVlX25hbWUiOiIxZDA3MWVjMy0xNWZmLTRlM2YtOTRlNS03OTkxZDRmZjA0ZWYiLCJ1c2VyX3R5cGUiOiJFbXBsb3llZSIsInRpdGxlIjoiSVQgQ29udHJhY3QgRGV2ZWxvcGVyIiwiY29tcGFueSI6IkNlbnRyYWwgSW5zdXJhbmNlIENvbXBhbmllcyIsImRlcGFydG1lbnQiOiJJbmZvcm1hdGlvbiBUZWNobm9sb2d5IChDb250cmFjdCBEZXZlbG9wZXIpIiwicm9sZSI6IlBMMDUxIiwianRpIjoiOUZFNDlFMEE2MTlGRDg4QUM3MUY2NTZFQTEzMUM2RTYiLCJzaWQiOiI2OTlGMTBEMUU4RjY0QjY5QTFCNTExODVFNzYyNThBQiIsImlhdCI6MTY0MDA3OTA1MCwic2NvcGUiOlsib3BlbmlkIiwiZ2F0ZXdheSJdLCJhbXIiOlsiZXh0ZXJuYWwiXX0.Eu1LtWOsx-3edf1ZUCEpa76P_3LwbplQDkzG_aGyF4lfYuH8lxcnmzS2c7c8k-nUwbSQpp6vYGW6i9UXnJA5Fx0xDPVG6Uiqhmmtr0EhpoJaKDJGFRwsln1plZ6XGPzpLD0e-43Mf3Rup92uT9KyikxLaHl2ZbUSpA3scz4chdWTvYnL-TlxNQZSOQEjcTCU_kzD3oQStWEcTd8mbeuUQJZpKTSjXZosK-klDoyHX0sr_DFw7X_OlTQ9K3g9f9Zeys6d8h6VpqlB82Wcs70PrrlHKddVNh9ys4bKk7kvuxFqMGQcP0W10QsMu1wocQUmYPr7CflcY0PqwrGf4LZ1XrvogaJyIEf-j7pOZTzoevYwKcYCh_Bg0zCSem11raqr1o2s7AlX-B_Tlu67yXX_syfl6Ei0Ep7RCoPii_FAk8t46jak5vtyLgjbXyyZuGoEZchwyunhn55JvisXCmf2fWIMQAionn8p6D4I0Xq8vwMhNye42HKKZDRsFst_Er8L"
+        let token = "eyJhbGciOiJSUzI1NiIsInR5cCI6ImF0K2p3dCJ9.eyJuYmYiOjE2NDAxNzUyODMsImV4cCI6MTY0MDE3ODg4MywiaXNzIjoiaHR0cDovL25lcHR1bmUuY21pcHJvZy5jb20vQ2VudHJhbEFwaUdhdGV3YXkvYXV0aG9yaXphdGlvbnNlcnZlci8iLCJhdWQiOiJnYXRld2F5IiwiY2xpZW50X2lkIjoiNUJCMEJEMzUxQjU0QUYyMzEyMjlBNTk4MUE2QjA5RTgiLCJzdWIiOiJpbnRyYXphY3MwMDEiLCJhdXRoX3RpbWUiOjE2NDAxNjczMDMsImlkcCI6Imh0dHA6Ly9wcm90ZXVzLmNtaXByb2cuY29tL0FVdGhvcml6YXRpb25TZXJ2ZXIiLCJnaXZlbl9uYW1lIjoiQWthbmtzaGEiLCJmYW1pbHlfbmFtZSI6IlNoYXJtYSIsImVtYWlsIjoiIiwidW5pcXVlX25hbWUiOiIxZDA3MWVjMy0xNWZmLTRlM2YtOTRlNS03OTkxZDRmZjA0ZWYiLCJ1c2VyX3R5cGUiOiJFbXBsb3llZSIsInRpdGxlIjoiSVQgQ29udHJhY3QgRGV2ZWxvcGVyIiwiY29tcGFueSI6IkNlbnRyYWwgSW5zdXJhbmNlIENvbXBhbmllcyIsImRlcGFydG1lbnQiOiJJbmZvcm1hdGlvbiBUZWNobm9sb2d5IChDb250cmFjdCBEZXZlbG9wZXIpIiwicm9sZSI6IlBMMDUxIiwianRpIjoiMjYzNkVDQTkxMjM0NzA3REZFQTc0QUFEQkMwNDUzMDMiLCJzaWQiOiI0RjQ4MEM3MzlFQUE3OUVCQTE1MDExNEU1RUYyNTBGQiIsImlhdCI6MTY0MDE3NTI4Mywic2NvcGUiOlsib3BlbmlkIiwiZ2F0ZXdheSJdLCJhbXIiOlsiZXh0ZXJuYWwiXX0.nzEYhTzmSWI4iWiniPPts6O5PY6N3MZ0wVaOVOZqws1yfm8A2tGCfB6rqQ-rRzlJWDClvNAtnaSzQ5k_LxogJ_raTeHqDempruhruZ3HsE1MxwrcPHETZ1xNaS5AZRfSEZYoBSaRUICsh2TxmF3d8SfBEMRx7bkJbhhr-Nki-L2W0pCxi3mY8b_2Oi1KG-T94id0IlTaO7XFySFp0I2dhzgFRqywNth6JIyZHXKYroWEFM3xibDdWzf7msFYOf_knWriLHwhRJQel5C9pfOpl7fXKgkycHndUaPk6JXXqlzJ1bhYVvjVLcL_VQfAuPc5mEKDE436bxOldSHTZ41YwGyLpMymS4wVI5vad6wD1lXdKw_2XLguvJrv7WKjlmv1bpZWsKJw5xADN25pthZ-w4ai0ulDCGywSY9oDkn8AmHLDRHq5ho9VwrJhx7uq8GUQkNBtPp4RE3nO27Zpwnx98134z_eg-Aj_MtXOahqS7wEfzMxck2-A4UE7ckri-lz"
         const opts = {
             provider: "AccountAPI_UserActivityNotes_provider",
             logLevel: "DEBUG",
@@ -31,13 +31,13 @@ server.listen(5000, () => {
                 next()
               },
 
-              stateHandlers: {
-                "a request to create a new activity note": () => {
-                    token
-                    activityData()
-                    return Promise.resolve(`New note is created`)
-                } 
-              },
+              // stateHandlers: {
+              //   "a request to create a new activity note": () => {
+              //       token
+              //       activityNoteResponse
+              //       return Promise.resolve(`New note is created`)
+              //   } 
+              // },
             pactBrokerUrl: process.env.PACT_BROKER_BASE_URL,
             publishVerificationResult: true,
             enablePending: true,
