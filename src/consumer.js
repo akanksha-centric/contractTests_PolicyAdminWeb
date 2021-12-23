@@ -42,7 +42,7 @@ const createApiCall = id => {
       //.set(authHeader)
       .send(accountUserActivity)
       .set("Content-Type", "application/json; charset=utf-8")
-      //.then(res => res.status)    
+      .then(res => res.status)    
   }
  
 

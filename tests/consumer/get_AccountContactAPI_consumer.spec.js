@@ -11,6 +11,7 @@ const { getAccount, getErrorAccount } = require("../../src/consumer")
 const accountData = require("../../data/accountContactDetails.json");
 const { up } = require("cli-color/move");
 const { response } = require("express");
+const { merge } = require("superagent");
 
 
 describe("Account Contact Details API consumer test", () => {
@@ -21,7 +22,8 @@ describe("Account Contact Details API consumer test", () => {
         dir: path.resolve(process.cwd(), "pacts"),
         spec : 2,
         logLevel: LOG_LEVEL,
-        cors: true
+        cors: true,
+        pactfileWriteMode: "merge"
     })
 
     before(() => mockprovider.setup().then(opts => {

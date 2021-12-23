@@ -57,6 +57,8 @@ describe("Account User Activity Notes consumer test", () => {
         expect(suggestedAccount).to.eventually.be.fulfilled.notify(done)
         })
     })
+
+
     describe("When a call is made to insert user activity note and user is not authorized ", () => {
         before(() => mockprovider.addInteraction({
             state: "When user is not authorized while adding activity account",
@@ -66,8 +68,7 @@ describe("Account User Activity Notes consumer test", () => {
                 path: "/v1/accounts/9404268316/user_activities/notes",
                 body: POST_BODY,
                 headers: {
-                    "Content-Type": "application/json; charset=utf-8",
-                    //Authorization: "Bearer token" 
+                    "Content-Type": "application/json; charset=utf-8"
                   },
             },
             willRespondWith: {
@@ -76,9 +77,11 @@ describe("Account User Activity Notes consumer test", () => {
         })
     )
     it("returns a 401 unauthorized when call made to create user activity", () => {
-        const suggestedAccount = postApiError("/v1/accounts/9404268316/user_activities/notes")
-        expect(suggestedAccount).to.eventually.be.rejectedWith("Unauthorized")        
+        return expect(postApiError("/v1/accounts/9404268316/user_activities/notes")).to.eventually.be.rejectedWith("Unauthorized")
+        //const suggestedAccount = getErrorAccount("/v1/accounts/9404268316/user_activities/notes")
+        //expect(suggestedAccount).to.eventually.be.rejectedWith("Unauthorized")        
       })
     })
+
     after(() => mockprovider.finalize())
 })

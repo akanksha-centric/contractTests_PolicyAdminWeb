@@ -9,15 +9,15 @@ const path = require("path")
 
 const SERVER_URL = "http://localhost:5000"
 
-//  server.listen(5000, () => {
-//     activityData()
-//     console.log(`Account API Contact Service listening on ${SERVER_URL}`)
-//   })
+  server.listen(5000, () => {
+     activityData()
+     console.log(`Account API Contact Service listening on ${SERVER_URL}`)
+   })
 
 // Verify that the provider meets all consumer expectations
  describe("User activity of Notes API Pact verification", () => {
     it("validates the expectations of Matching Service", () => {
-        let token = "eyJhbGciOiJSUzI1NiIsInR5cCI6ImF0K2p3dCJ9.eyJuYmYiOjE2NDAxNzUyODMsImV4cCI6MTY0MDE3ODg4MywiaXNzIjoiaHR0cDovL25lcHR1bmUuY21pcHJvZy5jb20vQ2VudHJhbEFwaUdhdGV3YXkvYXV0aG9yaXphdGlvbnNlcnZlci8iLCJhdWQiOiJnYXRld2F5IiwiY2xpZW50X2lkIjoiNUJCMEJEMzUxQjU0QUYyMzEyMjlBNTk4MUE2QjA5RTgiLCJzdWIiOiJpbnRyYXphY3MwMDEiLCJhdXRoX3RpbWUiOjE2NDAxNjczMDMsImlkcCI6Imh0dHA6Ly9wcm90ZXVzLmNtaXByb2cuY29tL0FVdGhvcml6YXRpb25TZXJ2ZXIiLCJnaXZlbl9uYW1lIjoiQWthbmtzaGEiLCJmYW1pbHlfbmFtZSI6IlNoYXJtYSIsImVtYWlsIjoiIiwidW5pcXVlX25hbWUiOiIxZDA3MWVjMy0xNWZmLTRlM2YtOTRlNS03OTkxZDRmZjA0ZWYiLCJ1c2VyX3R5cGUiOiJFbXBsb3llZSIsInRpdGxlIjoiSVQgQ29udHJhY3QgRGV2ZWxvcGVyIiwiY29tcGFueSI6IkNlbnRyYWwgSW5zdXJhbmNlIENvbXBhbmllcyIsImRlcGFydG1lbnQiOiJJbmZvcm1hdGlvbiBUZWNobm9sb2d5IChDb250cmFjdCBEZXZlbG9wZXIpIiwicm9sZSI6IlBMMDUxIiwianRpIjoiMjYzNkVDQTkxMjM0NzA3REZFQTc0QUFEQkMwNDUzMDMiLCJzaWQiOiI0RjQ4MEM3MzlFQUE3OUVCQTE1MDExNEU1RUYyNTBGQiIsImlhdCI6MTY0MDE3NTI4Mywic2NvcGUiOlsib3BlbmlkIiwiZ2F0ZXdheSJdLCJhbXIiOlsiZXh0ZXJuYWwiXX0.nzEYhTzmSWI4iWiniPPts6O5PY6N3MZ0wVaOVOZqws1yfm8A2tGCfB6rqQ-rRzlJWDClvNAtnaSzQ5k_LxogJ_raTeHqDempruhruZ3HsE1MxwrcPHETZ1xNaS5AZRfSEZYoBSaRUICsh2TxmF3d8SfBEMRx7bkJbhhr-Nki-L2W0pCxi3mY8b_2Oi1KG-T94id0IlTaO7XFySFp0I2dhzgFRqywNth6JIyZHXKYroWEFM3xibDdWzf7msFYOf_knWriLHwhRJQel5C9pfOpl7fXKgkycHndUaPk6JXXqlzJ1bhYVvjVLcL_VQfAuPc5mEKDE436bxOldSHTZ41YwGyLpMymS4wVI5vad6wD1lXdKw_2XLguvJrv7WKjlmv1bpZWsKJw5xADN25pthZ-w4ai0ulDCGywSY9oDkn8AmHLDRHq5ho9VwrJhx7uq8GUQkNBtPp4RE3nO27Zpwnx98134z_eg-Aj_MtXOahqS7wEfzMxck2-A4UE7ckri-lz"
+        let token = "eyJhbGciOiJSUzI1NiIsInR5cCI6ImF0K2p3dCJ9.eyJuYmYiOjE2NDAyNTc0NDgsImV4cCI6MTY0MDI2MTA0OCwiaXNzIjoiaHR0cDovL25lcHR1bmUuY21pcHJvZy5jb20vQ2VudHJhbEFwaUdhdGV3YXkvYXV0aG9yaXphdGlvbnNlcnZlci8iLCJhdWQiOiJnYXRld2F5IiwiY2xpZW50X2lkIjoiNUJCMEJEMzUxQjU0QUYyMzEyMjlBNTk4MUE2QjA5RTgiLCJzdWIiOiJpbnRyYXphY3MwMDEiLCJhdXRoX3RpbWUiOjE2NDAxNjczMDMsImlkcCI6Imh0dHA6Ly9wcm90ZXVzLmNtaXByb2cuY29tL0FVdGhvcml6YXRpb25TZXJ2ZXIiLCJnaXZlbl9uYW1lIjoiQWthbmtzaGEiLCJmYW1pbHlfbmFtZSI6IlNoYXJtYSIsImVtYWlsIjoiIiwidW5pcXVlX25hbWUiOiIxZDA3MWVjMy0xNWZmLTRlM2YtOTRlNS03OTkxZDRmZjA0ZWYiLCJ1c2VyX3R5cGUiOiJFbXBsb3llZSIsInRpdGxlIjoiSVQgQ29udHJhY3QgRGV2ZWxvcGVyIiwiY29tcGFueSI6IkNlbnRyYWwgSW5zdXJhbmNlIENvbXBhbmllcyIsImRlcGFydG1lbnQiOiJJbmZvcm1hdGlvbiBUZWNobm9sb2d5IChDb250cmFjdCBEZXZlbG9wZXIpIiwicm9sZSI6IlBMMDUxIiwianRpIjoiMzk5NEFDQzExRDhBM0Y5N0JCRTk1NEE3N0Q0RDBERDIiLCJzaWQiOiI0RjQ4MEM3MzlFQUE3OUVCQTE1MDExNEU1RUYyNTBGQiIsImlhdCI6MTY0MDI1NzQ0OCwic2NvcGUiOlsib3BlbmlkIiwiZ2F0ZXdheSJdLCJhbXIiOlsiZXh0ZXJuYWwiXX0.uquLmnM8BwNYQVQI2qJ1wymwEyxq1W9MuTwU2iZeY1NwePG_rOkOa8cSXU0MF39fzDPTyIzpNKNb4hhAx04-KXtfeF9Y-xkxL0PPyRcH81RM4nI-8Oa-t28ifusef39HmLewcrSr07TpHENQSwcTiV0zUaXF6pkPXj8RW8aRLUZzfLAdqeCcWnRDCiJJfw5EsWotH77ZtbpbpHRx9WdU0uuZdIonyDoaznuE9YIxqn_ayQz0oSJHKJG_ngtjU1gSG0CN3K95hwSMfDztjJSIfnCWqRjVCVGictu1uWQbtsB0UJh4W9L7ZL932V7Bn-QmhvhahJs2M_BdN8U20m7R43TQAowHtpvOhY9PzE-nebOmmRcnb7Bvdk9m5MVjpTuAbyFcHfrCtQOV9ETr4eXUSiJ7LSdtpjorHlYVYZvAmDTEL2rcFMg_I_Qf2rkXKYLJqnBdcxvGOtq6x1SBerQia4Bo5SAD3uzcE6pPJSCSkP-gji_x8xVdcuCRbEW5z0gO"
         const opts = {
             provider: "AccountAPI_UserActivityNotes_provider",
             logLevel: "DEBUG",
@@ -30,14 +30,17 @@ const SERVER_URL = "http://localhost:5000"
                 req.headers["authorization"] = `Bearer ${token}`
                 next()
               },
-
-              // stateHandlers: {
-              //   "a request to create a new activity note": () => {
-              //       token
-              //       activityNoteResponse
-              //       return Promise.resolve(`New note is created`)
-              //   } 
-              // },
+              stateHandlers: {
+                 "a request to create a new activity note": () => {
+                    token
+                    activityNoteResponse
+                    return Promise.resolve(`New note is created`)
+                 },
+                 "When user is not authorized while adding activity account": () => {
+                  token = ""
+                  Promise.resolve(`Invalid bearer token generated`)
+                }, 
+               },
             pactBrokerUrl: process.env.PACT_BROKER_BASE_URL,
             publishVerificationResult: true,
             enablePending: true,

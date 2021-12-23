@@ -1,5 +1,5 @@
-I, [2021-12-22T17:42:56.166141 #19708]  INFO -- : Registered expected interaction POST /v1/accounts/9404268316/user_activities/notes
-D, [2021-12-22T17:42:56.166635 #19708] DEBUG -- : {
+I, [2021-12-23T16:31:38.617852 #24564]  INFO -- : Registered expected interaction POST /v1/accounts/9404268316/user_activities/notes
+D, [2021-12-23T16:31:38.618271 #24564] DEBUG -- : {
   "description": "a request to create a new activity note",
   "providerState": "a request to create a new activity note",
   "request": {
@@ -108,8 +108,8 @@ D, [2021-12-22T17:42:56.166635 #19708] DEBUG -- : {
   },
   "metadata": null
 }
-I, [2021-12-22T17:42:56.182477 #19708]  INFO -- : Received request POST /v1/accounts/9404268316/user_activities/notes
-D, [2021-12-22T17:42:56.186505 #19708] DEBUG -- : {
+I, [2021-12-23T16:31:38.648137 #24564]  INFO -- : Received request POST /v1/accounts/9404268316/user_activities/notes
+D, [2021-12-23T16:31:38.650168 #24564] DEBUG -- : {
   "path": "/v1/accounts/9404268316/user_activities/notes",
   "query": "",
   "method": "post",
@@ -145,7 +145,7 @@ D, [2021-12-22T17:42:56.186505 #19708] DEBUG -- : {
   "headers": {
     "Content-Length": "444",
     "Content-Type": "application/json; charset=utf-8",
-    "Host": "localhost:56388",
+    "Host": "localhost:57365",
     "Accept-Encoding": "gzip, deflate",
     "User-Agent": "node-superagent/3.8.3",
     "Authorization": "Bearer token",
@@ -153,8 +153,8 @@ D, [2021-12-22T17:42:56.186505 #19708] DEBUG -- : {
     "Version": "HTTP/1.1"
   }
 }
-I, [2021-12-22T17:42:56.187460 #19708]  INFO -- : Found matching response for POST /v1/accounts/9404268316/user_activities/notes
-D, [2021-12-22T17:42:56.187768 #19708] DEBUG -- : {
+I, [2021-12-23T16:31:38.651165 #24564]  INFO -- : Found matching response for POST /v1/accounts/9404268316/user_activities/notes
+D, [2021-12-23T16:31:38.651165 #24564] DEBUG -- : {
   "status": 200,
   "headers": {
     "Content-Type": "application/json; charset=utf-8"
@@ -221,6 +221,105 @@ D, [2021-12-22T17:42:56.187768 #19708] DEBUG -- : {
     }
   }
 }
-I, [2021-12-22T17:42:56.206816 #19708]  INFO -- : Verifying - interactions matched
-I, [2021-12-22T17:42:56.221959 #19708]  INFO -- : Cleared interactions
-I, [2021-12-22T17:42:56.237108 #19708]  INFO -- : Writing pact for AccountAPI_UserActivityNotes_provider to C:/PAT_Contract/contractTests_PolicyAdminWeb/pacts/accountapi_useractivitynotes_consumer-accountapi_useractivitynotes_provider.json
+I, [2021-12-23T16:31:38.664196 #24564]  INFO -- : Verifying - interactions matched
+I, [2021-12-23T16:31:38.679860 #24564]  INFO -- : Cleared interactions
+I, [2021-12-23T16:31:38.696260 #24564]  INFO -- : Registered expected interaction POST /v1/accounts/9404268316/user_activities/notes
+D, [2021-12-23T16:31:38.697208 #24564] DEBUG -- : {
+  "description": "post request without authentication token",
+  "providerState": "When user is not authorized while adding activity account",
+  "request": {
+    "method": "POST",
+    "path": "/v1/accounts/9404268316/user_activities/notes",
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    "body": {
+      "isExpanded": false,
+      "showMore": false,
+      "isSelected": false,
+      "displayCommentBox": false,
+      "displayActivityDropdown": false,
+      "isReferralEditing": false,
+      "datePipe": {
+        "locale": "en-US"
+      },
+      "activityType": "Note",
+      "activityDtTm": "2021-12-01T16:28:31.000Z",
+      "note": {
+        "isEditing": false,
+        "datePipe": {
+          "locale": "en-US"
+        },
+        "isEdited": false,
+        "editedDate": null,
+        "editedTime": null,
+        "notes": "<p>test pact</p>"
+      },
+      "contacts": [
+
+      ],
+      "activityFlag": "Normal",
+      "dueDate": null,
+      "sendTo": "Services"
+    }
+  },
+  "response": {
+    "status": 401,
+    "headers": {
+    }
+  },
+  "metadata": null
+}
+I, [2021-12-23T16:31:38.712037 #24564]  INFO -- : Received request POST /v1/accounts/9404268316/user_activities/notes
+D, [2021-12-23T16:31:38.713035 #24564] DEBUG -- : {
+  "path": "/v1/accounts/9404268316/user_activities/notes",
+  "query": "",
+  "method": "post",
+  "body": {
+    "isExpanded": false,
+    "showMore": false,
+    "isSelected": false,
+    "displayCommentBox": false,
+    "displayActivityDropdown": false,
+    "isReferralEditing": false,
+    "datePipe": {
+      "locale": "en-US"
+    },
+    "activityType": "Note",
+    "activityDtTm": "2021-12-01T16:28:31.000Z",
+    "note": {
+      "isEditing": false,
+      "datePipe": {
+        "locale": "en-US"
+      },
+      "isEdited": false,
+      "editedDate": null,
+      "editedTime": null,
+      "notes": "<p>test pact</p>"
+    },
+    "contacts": [
+
+    ],
+    "activityFlag": "Normal",
+    "dueDate": null,
+    "sendTo": "Services"
+  },
+  "headers": {
+    "Content-Length": "444",
+    "Content-Type": "application/json; charset=utf-8",
+    "Host": "localhost:57365",
+    "Accept-Encoding": "gzip, deflate",
+    "User-Agent": "node-superagent/3.8.3",
+    "Connection": "close",
+    "Version": "HTTP/1.1"
+  }
+}
+I, [2021-12-23T16:31:38.713035 #24564]  INFO -- : Found matching response for POST /v1/accounts/9404268316/user_activities/notes
+D, [2021-12-23T16:31:38.713035 #24564] DEBUG -- : {
+  "status": 401,
+  "headers": {
+  }
+}
+I, [2021-12-23T16:31:38.729357 #24564]  INFO -- : Verifying - interactions matched
+I, [2021-12-23T16:31:38.742989 #24564]  INFO -- : Cleared interactions
+I, [2021-12-23T16:31:38.758595 #24564]  INFO -- : Writing pact for AccountAPI_UserActivityNotes_provider to C:/PAT_Contract/contractTests_PolicyAdminWeb/pacts/accountapi_useractivitynotes_consumer-accountapi_useractivitynotes_provider.json
