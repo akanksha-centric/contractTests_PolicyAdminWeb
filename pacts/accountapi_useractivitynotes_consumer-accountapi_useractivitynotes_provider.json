@@ -115,6 +115,22 @@
           }
         }
       }
+    },
+    {
+      "description": "post request without authentication token",
+      "providerState": "When user is not authorized while adding activity account",
+      "request": {
+        "method": "POST",
+        "path": "/v1/accounts/9404268316/user_activities/notes",
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8"
+        }
+      },
+      "response": {
+        "status": 401,
+        "headers": {
+        }
+      }
     }
   ],
   "metadata": {

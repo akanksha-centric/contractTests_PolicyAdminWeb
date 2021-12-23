@@ -35,11 +35,21 @@ const createApiCall = id => {
       .then(res => res.body, () => null)
       
   }
+  const postApiError = id => {
+    console.log(`${getApiEndPoint()}${id}`)
+    return request
+      .post(`${getApiEndPoint()}${id}`)
+      //.set(authHeader)
+      .send(accountUserActivity)
+      .set("Content-Type", "application/json; charset=utf-8")
+      //.then(res => res.status)    
+  }
  
 
 module.exports = {
     server,
     getAccount,
+    postApiError,
     getErrorAccount,
     createApiCall
 }

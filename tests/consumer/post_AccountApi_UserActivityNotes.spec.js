@@ -7,7 +7,7 @@ const exp = require("constants")
 const LOG_LEVEL = process.env.LOG_LEVEL || "WARN"
 const { Pact, Matchers } = require("@pact-foundation/pact")
 const { eachLike,like, regex, string } = Matchers
-const { createApiCall, getAccount, getErrorAccount } = require("../../src/consumer")
+const { createApiCall,postApiError, getAccount, getErrorAccount } = require("../../src/consumer")
 const POST_BODY = require("../../data/post/accountUserActivityNotes.json");
 const POST_EXPECTED_BODY = require("../../data/post/accountUserActivityResponse.json")
 const { up } = require("cli-color/move");
@@ -57,6 +57,28 @@ describe("Account User Activity Notes consumer test", () => {
         expect(suggestedAccount).to.eventually.be.fulfilled.notify(done)
         })
     })
-
+    describe("When a call is made to insert user activity note and user is not authorized ", () => {
+        before(() => mockprovider.addInteraction({
+            state: "When user is not authorized while adding activity account",
+            uponReceiving: "post request without authentication token",
+            withRequest: {
+                method: "POST",
+                path: "/v1/accounts/9404268316/user_activities/notes",
+                body: POST_BODY,
+                headers: {
+                    "Content-Type": "application/json; charset=utf-8",
+                    //Authorization: "Bearer token" 
+                  },
+            },
+            willRespondWith: {
+                status: 401,
+            },
+        })
+    )
+    it("returns a 401 unauthorized when call made to create user activity", () => {
+        const suggestedAccount = postApiError("/v1/accounts/9404268316/user_activities/notes")
+        expect(suggestedAccount).to.eventually.be.rejectedWith("Unauthorized")        
+      })
+    })
     after(() => mockprovider.finalize())
 })
