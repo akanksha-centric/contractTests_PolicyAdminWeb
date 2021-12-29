@@ -7,12 +7,13 @@ const exp = require("constants")
 const LOG_LEVEL = process.env.LOG_LEVEL || "WARN"
 const { Pact, Matchers } = require("@pact-foundation/pact")
 const { eachLike,like, regex, string } = Matchers
-const { getAccount, getErrorAccount } = require("../../src/consumer")
-const accountData = require("../../data/accountContactDetails.json");
+const { getAccount, getErrorAccount } = require("../../../src/consumer")
+const { getAccountContactDetailsResponse } = require("../../../src/getModels")
+const { configurationList,saveConfiguration } = require("../../../src/configurationManager")
 const { up } = require("cli-color/move");
 const { response } = require("express");
 const { merge } = require("superagent");
-
+const { Console } = require("console");
 
 describe("Account Contact Details API consumer test", () => {
     const mockprovider = new Pact({
@@ -45,7 +46,7 @@ describe("Account Contact Details API consumer test", () => {
             willRespondWith: {
                 status: 200,
                 headers: {"Content-Type": "application/json; charset=utf-8"},
-                body: accountData,
+                body: getAccountContactDetailsResponse,
             },
         })
     )

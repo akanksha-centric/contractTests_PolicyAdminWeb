@@ -7,11 +7,10 @@ const exp = require("constants")
 const LOG_LEVEL = process.env.LOG_LEVEL || "WARN"
 const { Pact, Matchers } = require("@pact-foundation/pact")
 const { eachLike, regex, string } = Matchers
-const { getAccount, getErrorAccount } = require("../../src/consumer")
-const accountData = require("../../data/accountApi.json");
+const { getAccount, getErrorAccount } = require("../../../src/consumer")
+const { getAccountInfoResponse } = require("../../../src/getModels")
 const { up } = require("cli-color/move");
 const { response } = require("express");
-
 
 describe("Account API consumer test", () => {
     const mockprovider = new Pact({
@@ -43,7 +42,7 @@ describe("Account API consumer test", () => {
             willRespondWith: {
                 status: 200,
                 headers: {"Content-Type": "application/json; charset=utf-8"},
-                body: accountData,
+                body: getAccountInfoResponse,
             },
         })
     )

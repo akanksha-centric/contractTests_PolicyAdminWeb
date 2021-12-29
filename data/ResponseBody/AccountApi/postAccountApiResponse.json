@@ -1,0 +1,44 @@
+{
+    "accountId": 9409553036,
+    "accountNumber": "A-04218-12272021915272",
+    "domesticAbuse": false,
+    "effectiveDate": "2021-12-27T05:28:10.3066667",
+    "expirationDate": "9999-12-31T00:00:00",
+    "accountStatus": "Open",
+    "agencyRegion": "0",
+    "agencyCode": "4218",
+    "agencyName": "HUPE INSURANCE SERVICES ",
+    "agencyContactGuid": "acf4daa1-c9a6-476d-a542-1785f7f34def",
+    "agencyContactInfo": {
+      "userId": "acf4daa1-c9a6-476d-a542-1785f7f34def",
+      "agencyAMSId": null,
+      "userType": null,
+      "userName": "RYAN DAVIS",
+      "systemName": null,
+      "department": null,
+      "title": null
+    },
+    "underwriter": {
+      "userId": "3cb2f329-a4a3-42e3-b55e-32e3c0248d02",
+      "agencyAMSId": null,
+      "userType": null,
+      "userName": "Julie Williams-Fisher",
+      "systemName": null,
+      "department": "Personal Lines Underwriting",
+      "title": null
+    },
+    "serviceRepresentative": {
+      "userId": null,
+      "agencyAMSId": null,
+      "userType": null,
+      "userName": null,
+      "systemName": null,
+      "department": null,
+      "title": null
+    },
+    "accountPMACode": null,
+    "additionalFields": null,
+    "hasValidationErrors": false,
+    "validationMessages": [],
+    "accountType": "Personal"
+  }

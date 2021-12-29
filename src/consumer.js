@@ -1,8 +1,9 @@
 const axios = require("axios");
-const accountUserActivity = require("../data/post/accountUserActivityNotes.json");
+const { postUserActivityNotesReqBody,postAccountApiReqBody } = require("./getModels")
 const express = require("express")
 const request = require("superagent")
 const server = express()
+
 
 const getApiEndPoint = () => process.env.API_HOST 
 //|| "http://localhost:8081"
@@ -25,12 +26,12 @@ const getErrorAccount = id => {
         .then(res => res.status);
 }
 
-const createApiCall = id => {
+const createApiCall = id=> {
     console.log(`${getApiEndPoint()}${id}`)
     return request
       .post(`${getApiEndPoint()}${id}`)
       .set(authHeader)
-      .send(accountUserActivity)
+      .send(postUserActivityNotesReqBody)
       .set("Content-Type", "application/json; charset=utf-8")
       .then(res => res.body, () => null)
       
@@ -40,7 +41,26 @@ const createApiCall = id => {
     return request
       .post(`${getApiEndPoint()}${id}`)
       //.set(authHeader)
-      .send(accountUserActivity)
+      .send(postUserActivityNotesReqBody)
+      .set("Content-Type", "application/json; charset=utf-8")
+      .then(res => res.status)    
+  }
+  const createAccountApiCall = id => {
+    console.log(`${getApiEndPoint()}${id}`)
+    return request
+      .post(`${getApiEndPoint()}${id}`)
+      .set(authHeader)
+      .send(postAccountApiReqBody)
+      .set("Content-Type", "application/json; charset=utf-8")
+      .then(res => res.body, () => null)
+      
+  }
+  const postAccountApiError = id => {
+    console.log(`${getApiEndPoint()}${id}`)
+    return request
+      .post(`${getApiEndPoint()}${id}`)
+      //.set(authHeader)
+      .send(postAccountApiReqBody)
       .set("Content-Type", "application/json; charset=utf-8")
       .then(res => res.status)    
   }
@@ -51,5 +71,7 @@ module.exports = {
     getAccount,
     postApiError,
     getErrorAccount,
-    createApiCall
+    createApiCall,
+    postAccountApiError,
+    createAccountApiCall
 }

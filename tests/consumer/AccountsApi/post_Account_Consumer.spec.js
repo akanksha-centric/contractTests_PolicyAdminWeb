@@ -7,17 +7,15 @@ const exp = require("constants")
 const LOG_LEVEL = process.env.LOG_LEVEL || "WARN"
 const { Pact, Matchers } = require("@pact-foundation/pact")
 const { eachLike,like, regex, string } = Matchers
-const { createApiCall,postApiError, getAccount, getErrorAccount } = require("../../src/consumer")
-const POST_BODY = require("../../data/post/accountUserActivityNotes.json");
-const POST_EXPECTED_BODY = require("../../data/post/accountUserActivityResponse.json")
+const { createAccountApiCall,postAccountApiError} = require("../../../src/consumer")
+const { postAccountApiReqBody,postAccountApiResponse } = require("../../../src/getModels")
 const { up } = require("cli-color/move");
 const {response} = require("express");
 
-
-describe("Account User Activity Notes consumer test", () => {
+describe("Create Account consumer test", () => {
     const mockprovider = new Pact({
-        consumer: "AccountAPI_UserActivityNotes_consumer",
-        provider: "AccountAPI_UserActivityNotes_provider",
+        consumer: "AccountAPI_Post_consumer",
+        provider: "AccountAPI_Post_provider",
         log: path.resolve(process.cwd(), "logs", "mockserver-integration.log"),
         dir: path.resolve(process.cwd(), "pacts"),
         spec : 2,
@@ -32,14 +30,14 @@ describe("Account User Activity Notes consumer test", () => {
 
     afterEach(() => mockprovider.verify())
 
-    describe("When a call is made to insert user activity note", () => {
+    describe("When a call is made to create an account", () => {
         before(() => mockprovider.addInteraction({
-            state: "a request to create a new activity note",
-            uponReceiving: "a request to create a new activity note",
+            state: "a request to create a new account",
+            uponReceiving: "a request to create a new account",
             withRequest: {
                 method: "POST",
-                path: "/v1/accounts/9404268316/user_activities/notes",
-                body: POST_BODY,
+                path: "/v1/accounts",
+                body: postAccountApiReqBody,
                 headers: {
                     "Content-Type": "application/json; charset=utf-8",
                     Authorization: "Bearer token" 
@@ -48,25 +46,25 @@ describe("Account User Activity Notes consumer test", () => {
             willRespondWith: {
                 status: 200,
                 headers: {"Content-Type": "application/json; charset=utf-8"},
-                body: like(POST_EXPECTED_BODY)
+                body: like(postAccountApiResponse)
             },
         })
     )
     it("creates a new user activity note", done => {
-        const suggestedAccount = createApiCall("/v1/accounts/9404268316/user_activities/notes")
+        const suggestedAccount = createAccountApiCall("/v1/accounts")
         expect(suggestedAccount).to.eventually.be.fulfilled.notify(done)
         })
     })
 
 
-    describe("When a call is made to insert user activity note and user is not authorized ", () => {
+    describe("When a call is made to create account and user is not authorized ", () => {
         before(() => mockprovider.addInteraction({
-            state: "When user is not authorized while adding activity account",
-            uponReceiving: "post request without authentication token",
+            state: "When user is not authorized while creating new account",
+            uponReceiving: "When user is not authorized while creating new account",
             withRequest: {
                 method: "POST",
-                path: "/v1/accounts/9404268316/user_activities/notes",
-                body: POST_BODY,
+                path: "/v1/accounts",
+                body: postAccountApiReqBody,
                 headers: {
                     "Content-Type": "application/json; charset=utf-8"
                   },
@@ -77,9 +75,7 @@ describe("Account User Activity Notes consumer test", () => {
         })
     )
     it("returns a 401 unauthorized when call made to create user activity", () => {
-        return expect(postApiError("/v1/accounts/9404268316/user_activities/notes")).to.eventually.be.rejectedWith("Unauthorized")
-        //const suggestedAccount = getErrorAccount("/v1/accounts/9404268316/user_activities/notes")
-        //expect(suggestedAccount).to.eventually.be.rejectedWith("Unauthorized")        
+        return expect(postAccountApiError("/v1/accounts")).to.eventually.be.rejectedWith("Unauthorized")
       })
     })
 
