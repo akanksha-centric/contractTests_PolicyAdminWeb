@@ -16,6 +16,10 @@ const postAccountApiResponse = require("../data/ResponseBody/AccountApi/postAcco
 const postUserActivityNotesResponse = require("../data/ResponseBody/UserActivityApi/postUserActivityNotesResponse.json")
 const postUserActivityNotesReqBody = require("../data/RequestBody/UserActivityApi/postUserActivityNotesReqBody.json");
 
+//-------QUICK SEARCH API--------
+const postQuickSearchApiReqBody = require("../data/RequestBody/QuickSearchApi/postQuickSearchApiReqBody.json");
+const postQuickSearchResponse = require("../data/ResponseBody/QuickSearchApi/postQuickSearchResponse.json");
+
 
 
 
@@ -27,5 +31,7 @@ module.exports = {
     getAccountInfoResponse,
     postAccountApiResponse,
     postUserActivityNotesResponse,
-    postUserActivityNotesReqBody
+    postUserActivityNotesReqBody,
+    postQuickSearchApiReqBody,
+    postQuickSearchResponse
   }  

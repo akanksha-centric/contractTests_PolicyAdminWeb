@@ -1,0 +1,44 @@
+{
+    "searchString": "Au",
+    "accountType": "All",
+    "matchCount": 2,
+    "accounts": [
+        {
+            "accountNumber": "A-04218-12222021914475",
+            "applicantName": "NICK M LOISLUXDP",
+            "address": "3715 KIRKLYNN DR, NEW HAVEN, IN 46774",
+            "accountType": "Personal",
+            "state": "IN",
+            "searchResultSource": "PAT",
+            "searchResultType": "Account",
+            "accountId": 9409084780,
+            "value": "auypo@qa.central-insurance.com",
+            "type": "Email",
+            "agencyRegion": "0",
+            "agencyCode": "4218",
+            "domesticAbuse": false,
+            "emailAddress": "auypo@qa.central-insurance.com",
+            "phoneNumber": "(488) 168-6318"
+        }
+    ],
+    "policies": [
+        {
+            "productType": "Homeowners",
+            "productName": "IN - Homeowners",
+            "productApplicantName": "BOBA M ALLENIVQMR",
+            "productAddress": "6801 FORD RIDGE RD, NASHVILLE, IN 47448",
+            "lob": "Homeowners",
+            "riskState": "IN",
+            "searchResultSource": "PAT",
+            "searchResultType": "Policy",
+            "accountId": 9351496051,
+            "value": "aumrb@central-insurance.com",
+            "type": "Email",
+            "agencyRegion": "0",
+            "agencyCode": "4218",
+            "domesticAbuse": false,
+            "emailAddress": "aumrb@central-insurance.com",
+            "phoneNumber": "(873) 335-3756"
+        }
+    ]
+}

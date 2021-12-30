@@ -1,5 +1,5 @@
 const axios = require("axios");
-const { postUserActivityNotesReqBody,postAccountApiReqBody } = require("./getModels")
+const { postUserActivityNotesReqBody,postAccountApiReqBody, postQuickSearchApiReqBody } = require("./getModels")
 const express = require("express")
 const request = require("superagent")
 const server = express()
@@ -64,6 +64,26 @@ const createApiCall = id=> {
       .set("Content-Type", "application/json; charset=utf-8")
       .then(res => res.status)    
   }
+
+  const postQuickSerach = id => {
+    console.log(`${getApiEndPoint()}${id}`)
+    return request
+    .post(`${getApiEndPoint()}${id}`)
+    .set(authHeader)
+    .send(postQuickSearchApiReqBody)
+    .set("Content-Type", "application/json; charset=utf-8")
+    .then(res => res.status)
+  }
+
+  const postQuickSearchApiError = id => {
+    console.log(`${getApiEndPoint()}${id}`)
+    return request
+      .post(`${getApiEndPoint()}${id}`)
+      //.set(authHeader)
+      .send(postQuickSearchApiReqBody)
+      .set("Content-Type", "application/json; charset=utf-8")
+      .then(res => res.status)    
+  }
  
 
 module.exports = {
@@ -73,5 +93,7 @@ module.exports = {
     getErrorAccount,
     createApiCall,
     postAccountApiError,
-    createAccountApiCall
+    createAccountApiCall,
+    postQuickSerach,
+    postQuickSearchApiError
 }

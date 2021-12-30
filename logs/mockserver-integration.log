@@ -1,42 +1,18 @@
-I, [2021-12-29T08:58:52.599488 #8904]  INFO -- : Registered expected interaction POST /v1/accounts/9404268316/user_activities/notes
-D, [2021-12-29T08:58:52.600495 #8904] DEBUG -- : {
-  "description": "a request to create a new activity note",
-  "providerState": "a request to create a new activity note",
+I, [2021-12-30T13:27:23.513331 #23404]  INFO -- : Registered expected interaction POST /v1/accounts/actions/quicksearch
+D, [2021-12-30T13:27:23.513692 #23404] DEBUG -- : {
+  "description": "a request for a quick search account",
+  "providerState": "Quick search of an account",
   "request": {
     "method": "POST",
-    "path": "/v1/accounts/9404268316/user_activities/notes",
+    "path": "/v1/accounts/actions/quicksearch",
     "headers": {
       "Content-Type": "application/json; charset=utf-8",
       "Authorization": "Bearer token"
     },
     "body": {
-      "isExpanded": false,
-      "showMore": false,
-      "isSelected": false,
-      "displayCommentBox": false,
-      "displayActivityDropdown": false,
-      "isReferralEditing": false,
-      "datePipe": {
-        "locale": "en-US"
-      },
-      "activityType": "Note",
-      "activityDtTm": "2021-12-01T16:28:31.000Z",
-      "note": {
-        "isEditing": false,
-        "datePipe": {
-          "locale": "en-US"
-        },
-        "isEdited": false,
-        "editedDate": null,
-        "editedTime": null,
-        "notes": "<p>test pact</p>"
-      },
-      "contacts": [
-
-      ],
-      "activityFlag": "Normal",
-      "dueDate": null,
-      "sendTo": "Services"
+      "searchString": "Au",
+      "accountType": "All",
+      "maxResultsCount": 2
     }
   },
   "response": {
@@ -47,105 +23,67 @@ D, [2021-12-29T08:58:52.600495 #8904] DEBUG -- : {
     "body": {
       "json_class": "Pact::SomethingLike",
       "contents": {
-        "activityId": 9408850982,
-        "activityType": "Note",
-        "activityFlag": "Normal",
-        "objectType": "Account",
-        "productName": "",
-        "note": {
-          "noteId": 9408850983,
-          "notes": "<p>test pact</p>",
-          "createdDtTm": "2021-12-21T13:44:16.8033333",
-          "updatedDtTm": "2021-12-21T13:44:16.8033333",
-          "updatedBy": {
-            "userId": "1d071ec3-15ff-4e3f-94e5-7991d4ff04ef",
-            "agencyAMSId": null,
-            "userType": null,
-            "userName": "Akanksha Sharma",
-            "systemName": null,
-            "department": "Information Technology (Contract Developer)",
-            "title": null
-          },
-          "noteType": "ActivityNote",
-          "status": "Added"
-        },
-        "comments": [
-
+        "searchString": "Au",
+        "accountType": "All",
+        "matchCount": 2,
+        "accounts": [
+          {
+            "accountNumber": "A-04218-12222021914475",
+            "applicantName": "NICK M LOISLUXDP",
+            "address": "3715 KIRKLYNN DR, NEW HAVEN, IN 46774",
+            "accountType": "Personal",
+            "state": "IN",
+            "searchResultSource": "PAT",
+            "searchResultType": "Account",
+            "accountId": 9409084780,
+            "value": "auypo@qa.central-insurance.com",
+            "type": "Email",
+            "agencyRegion": "0",
+            "agencyCode": "4218",
+            "domesticAbuse": false,
+            "emailAddress": "auypo@qa.central-insurance.com",
+            "phoneNumber": "(488) 168-6318"
+          }
         ],
-        "createdBy": {
-          "userId": "1d071ec3-15ff-4e3f-94e5-7991d4ff04ef",
-          "agencyAMSId": null,
-          "userType": null,
-          "userName": "Akanksha Sharma",
-          "systemName": null,
-          "department": "Information Technology (Contract Developer)",
-          "title": null
-        },
-        "createdDtTm": "2021-12-21T13:44:16.5",
-        "attachments": null,
-        "policyIdentifier": null,
-        "policyActivityId": null,
-        "insuranceItemId": null,
-        "policyItemId": null,
-        "policyItemType": null,
-        "updatedDtTm": "2021-12-21T13:44:16.5",
-        "activityDtTm": "2021-12-01T16:28:31",
-        "contacts": null,
-        "noteActivityId": 9408850985,
-        "sendTo": "Services",
-        "callActivityId": null,
-        "isCallInBound": null,
-        "emailActivityId": null,
-        "emailSubject": null,
-        "isEmailInBound": null,
-        "meetingActivityId": null,
-        "taskActivityId": null,
-        "taskActivityReference": null,
-        "taskType": null,
-        "dueDate": null
+        "policies": [
+          {
+            "productType": "Homeowners",
+            "productName": "IN - Homeowners",
+            "productApplicantName": "BOBA M ALLENIVQMR",
+            "productAddress": "6801 FORD RIDGE RD, NASHVILLE, IN 47448",
+            "lob": "Homeowners",
+            "riskState": "IN",
+            "searchResultSource": "PAT",
+            "searchResultType": "Policy",
+            "accountId": 9351496051,
+            "value": "aumrb@central-insurance.com",
+            "type": "Email",
+            "agencyRegion": "0",
+            "agencyCode": "4218",
+            "domesticAbuse": false,
+            "emailAddress": "aumrb@central-insurance.com",
+            "phoneNumber": "(873) 335-3756"
+          }
+        ]
       }
     }
   },
   "metadata": null
 }
-I, [2021-12-29T08:58:52.613491 #8904]  INFO -- : Received request POST /v1/accounts/9404268316/user_activities/notes
-D, [2021-12-29T08:58:52.613491 #8904] DEBUG -- : {
-  "path": "/v1/accounts/9404268316/user_activities/notes",
+I, [2021-12-30T13:27:23.543600 #23404]  INFO -- : Received request POST /v1/accounts/actions/quicksearch
+D, [2021-12-30T13:27:23.543835 #23404] DEBUG -- : {
+  "path": "/v1/accounts/actions/quicksearch",
   "query": "",
   "method": "post",
   "body": {
-    "isExpanded": false,
-    "showMore": false,
-    "isSelected": false,
-    "displayCommentBox": false,
-    "displayActivityDropdown": false,
-    "isReferralEditing": false,
-    "datePipe": {
-      "locale": "en-US"
-    },
-    "activityType": "Note",
-    "activityDtTm": "2021-12-01T16:28:31.000Z",
-    "note": {
-      "isEditing": false,
-      "datePipe": {
-        "locale": "en-US"
-      },
-      "isEdited": false,
-      "editedDate": null,
-      "editedTime": null,
-      "notes": "<p>test pact</p>"
-    },
-    "contacts": [
-
-    ],
-    "activityFlag": "Normal",
-    "dueDate": null,
-    "sendTo": "Services"
+    "searchString": "Au",
+    "accountType": "All",
+    "maxResultsCount": 2
   },
   "headers": {
-    "Content-Length": "444",
+    "Content-Length": "61",
     "Content-Type": "application/json; charset=utf-8",
-    "Host": "localhost:54795",
+    "Host": "localhost:60156",
     "Accept-Encoding": "gzip, deflate",
     "User-Agent": "node-superagent/3.8.3",
     "Authorization": "Bearer token",
@@ -153,8 +91,8 @@ D, [2021-12-29T08:58:52.613491 #8904] DEBUG -- : {
     "Version": "HTTP/1.1"
   }
 }
-I, [2021-12-29T08:58:52.614492 #8904]  INFO -- : Found matching response for POST /v1/accounts/9404268316/user_activities/notes
-D, [2021-12-29T08:58:52.614492 #8904] DEBUG -- : {
+I, [2021-12-30T13:27:23.544599 #23404]  INFO -- : Found matching response for POST /v1/accounts/actions/quicksearch
+D, [2021-12-30T13:27:23.544599 #23404] DEBUG -- : {
   "status": 200,
   "headers": {
     "Content-Type": "application/json; charset=utf-8"
@@ -162,105 +100,67 @@ D, [2021-12-29T08:58:52.614492 #8904] DEBUG -- : {
   "body": {
     "json_class": "Pact::SomethingLike",
     "contents": {
-      "activityId": 9408850982,
-      "activityType": "Note",
-      "activityFlag": "Normal",
-      "objectType": "Account",
-      "productName": "",
-      "note": {
-        "noteId": 9408850983,
-        "notes": "<p>test pact</p>",
-        "createdDtTm": "2021-12-21T13:44:16.8033333",
-        "updatedDtTm": "2021-12-21T13:44:16.8033333",
-        "updatedBy": {
-          "userId": "1d071ec3-15ff-4e3f-94e5-7991d4ff04ef",
-          "agencyAMSId": null,
-          "userType": null,
-          "userName": "Akanksha Sharma",
-          "systemName": null,
-          "department": "Information Technology (Contract Developer)",
-          "title": null
-        },
-        "noteType": "ActivityNote",
-        "status": "Added"
-      },
-      "comments": [
-
+      "searchString": "Au",
+      "accountType": "All",
+      "matchCount": 2,
+      "accounts": [
+        {
+          "accountNumber": "A-04218-12222021914475",
+          "applicantName": "NICK M LOISLUXDP",
+          "address": "3715 KIRKLYNN DR, NEW HAVEN, IN 46774",
+          "accountType": "Personal",
+          "state": "IN",
+          "searchResultSource": "PAT",
+          "searchResultType": "Account",
+          "accountId": 9409084780,
+          "value": "auypo@qa.central-insurance.com",
+          "type": "Email",
+          "agencyRegion": "0",
+          "agencyCode": "4218",
+          "domesticAbuse": false,
+          "emailAddress": "auypo@qa.central-insurance.com",
+          "phoneNumber": "(488) 168-6318"
+        }
       ],
-      "createdBy": {
-        "userId": "1d071ec3-15ff-4e3f-94e5-7991d4ff04ef",
-        "agencyAMSId": null,
-        "userType": null,
-        "userName": "Akanksha Sharma",
-        "systemName": null,
-        "department": "Information Technology (Contract Developer)",
-        "title": null
-      },
-      "createdDtTm": "2021-12-21T13:44:16.5",
-      "attachments": null,
-      "policyIdentifier": null,
-      "policyActivityId": null,
-      "insuranceItemId": null,
-      "policyItemId": null,
-      "policyItemType": null,
-      "updatedDtTm": "2021-12-21T13:44:16.5",
-      "activityDtTm": "2021-12-01T16:28:31",
-      "contacts": null,
-      "noteActivityId": 9408850985,
-      "sendTo": "Services",
-      "callActivityId": null,
-      "isCallInBound": null,
-      "emailActivityId": null,
-      "emailSubject": null,
-      "isEmailInBound": null,
-      "meetingActivityId": null,
-      "taskActivityId": null,
-      "taskActivityReference": null,
-      "taskType": null,
-      "dueDate": null
+      "policies": [
+        {
+          "productType": "Homeowners",
+          "productName": "IN - Homeowners",
+          "productApplicantName": "BOBA M ALLENIVQMR",
+          "productAddress": "6801 FORD RIDGE RD, NASHVILLE, IN 47448",
+          "lob": "Homeowners",
+          "riskState": "IN",
+          "searchResultSource": "PAT",
+          "searchResultType": "Policy",
+          "accountId": 9351496051,
+          "value": "aumrb@central-insurance.com",
+          "type": "Email",
+          "agencyRegion": "0",
+          "agencyCode": "4218",
+          "domesticAbuse": false,
+          "emailAddress": "aumrb@central-insurance.com",
+          "phoneNumber": "(873) 335-3756"
+        }
+      ]
     }
   }
 }
-I, [2021-12-29T08:58:52.620490 #8904]  INFO -- : Verifying - interactions matched
-I, [2021-12-29T08:58:52.631489 #8904]  INFO -- : Cleared interactions
-I, [2021-12-29T08:58:52.643494 #8904]  INFO -- : Registered expected interaction POST /v1/accounts/9404268316/user_activities/notes
-D, [2021-12-29T08:58:52.643494 #8904] DEBUG -- : {
-  "description": "post request without authentication token",
-  "providerState": "When user is not authorized while adding activity account",
+I, [2021-12-30T13:27:23.560440 #23404]  INFO -- : Verifying - interactions matched
+I, [2021-12-30T13:27:23.573696 #23404]  INFO -- : Cleared interactions
+I, [2021-12-30T13:27:23.591374 #23404]  INFO -- : Registered expected interaction POST /v1/accounts/actions/quicksearch
+D, [2021-12-30T13:27:23.591374 #23404] DEBUG -- : {
+  "description": "When user is not authorized while quick search",
+  "providerState": "When user is not authorized while quick search",
   "request": {
     "method": "POST",
-    "path": "/v1/accounts/9404268316/user_activities/notes",
+    "path": "/v1/accounts/actions/quicksearch",
     "headers": {
       "Content-Type": "application/json; charset=utf-8"
     },
     "body": {
-      "isExpanded": false,
-      "showMore": false,
-      "isSelected": false,
-      "displayCommentBox": false,
-      "displayActivityDropdown": false,
-      "isReferralEditing": false,
-      "datePipe": {
-        "locale": "en-US"
-      },
-      "activityType": "Note",
-      "activityDtTm": "2021-12-01T16:28:31.000Z",
-      "note": {
-        "isEditing": false,
-        "datePipe": {
-          "locale": "en-US"
-        },
-        "isEdited": false,
-        "editedDate": null,
-        "editedTime": null,
-        "notes": "<p>test pact</p>"
-      },
-      "contacts": [
-
-      ],
-      "activityFlag": "Normal",
-      "dueDate": null,
-      "sendTo": "Services"
+      "searchString": "Au",
+      "accountType": "All",
+      "maxResultsCount": 2
     }
   },
   "response": {
@@ -270,56 +170,32 @@ D, [2021-12-29T08:58:52.643494 #8904] DEBUG -- : {
   },
   "metadata": null
 }
-I, [2021-12-29T08:58:52.654496 #8904]  INFO -- : Received request POST /v1/accounts/9404268316/user_activities/notes
-D, [2021-12-29T08:58:52.654496 #8904] DEBUG -- : {
-  "path": "/v1/accounts/9404268316/user_activities/notes",
+I, [2021-12-30T13:27:23.605653 #23404]  INFO -- : Received request POST /v1/accounts/actions/quicksearch
+D, [2021-12-30T13:27:23.605653 #23404] DEBUG -- : {
+  "path": "/v1/accounts/actions/quicksearch",
   "query": "",
   "method": "post",
   "body": {
-    "isExpanded": false,
-    "showMore": false,
-    "isSelected": false,
-    "displayCommentBox": false,
-    "displayActivityDropdown": false,
-    "isReferralEditing": false,
-    "datePipe": {
-      "locale": "en-US"
-    },
-    "activityType": "Note",
-    "activityDtTm": "2021-12-01T16:28:31.000Z",
-    "note": {
-      "isEditing": false,
-      "datePipe": {
-        "locale": "en-US"
-      },
-      "isEdited": false,
-      "editedDate": null,
-      "editedTime": null,
-      "notes": "<p>test pact</p>"
-    },
-    "contacts": [
-
-    ],
-    "activityFlag": "Normal",
-    "dueDate": null,
-    "sendTo": "Services"
+    "searchString": "Au",
+    "accountType": "All",
+    "maxResultsCount": 2
   },
   "headers": {
-    "Content-Length": "444",
+    "Content-Length": "61",
     "Content-Type": "application/json; charset=utf-8",
-    "Host": "localhost:54795",
+    "Host": "localhost:60156",
     "Accept-Encoding": "gzip, deflate",
     "User-Agent": "node-superagent/3.8.3",
     "Connection": "close",
     "Version": "HTTP/1.1"
   }
 }
-I, [2021-12-29T08:58:52.654496 #8904]  INFO -- : Found matching response for POST /v1/accounts/9404268316/user_activities/notes
-D, [2021-12-29T08:58:52.654496 #8904] DEBUG -- : {
+I, [2021-12-30T13:27:23.606341 #23404]  INFO -- : Found matching response for POST /v1/accounts/actions/quicksearch
+D, [2021-12-30T13:27:23.606649 #23404] DEBUG -- : {
   "status": 401,
   "headers": {
   }
 }
-I, [2021-12-29T08:58:52.664498 #8904]  INFO -- : Verifying - interactions matched
-I, [2021-12-29T08:58:52.675499 #8904]  INFO -- : Cleared interactions
-I, [2021-12-29T08:58:52.687512 #8904]  INFO -- : Writing pact for AccountAPI_UserActivityNotes_provider to C:/contractTests_PolicyAdminWeb/pacts/accountapi_useractivitynotes_consumer-accountapi_useractivitynotes_provider.json
+I, [2021-12-30T13:27:23.620714 #23404]  INFO -- : Verifying - interactions matched
+I, [2021-12-30T13:27:23.636419 #23404]  INFO -- : Cleared interactions
+I, [2021-12-30T13:27:23.650711 #23404]  INFO -- : Writing pact for QuickSearch_provider to C:/PAT_Contract/contractTests_PolicyAdminWeb/pacts/quicksearch_consumer-quicksearch_provider.json
