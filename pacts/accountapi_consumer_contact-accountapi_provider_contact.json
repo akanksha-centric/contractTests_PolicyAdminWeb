@@ -7,8 +7,8 @@
   },
   "interactions": [
     {
-      "description": "a request for an account with ID 9348878860",
-      "providerState": "Has an contact details with ID 9348878860",
+      "description": "200 OK return account contact details",
+      "providerState": "When call made to get account contact details for id 9348878860",
       "request": {
         "method": "GET",
         "path": "/v1/accounts/9348878860/contactDetails",
@@ -35,8 +35,8 @@
       }
     },
     {
-      "description": "a request without authentication token",
-      "providerState": "When user is not authorized",
+      "description": "Unauthorized 401",
+      "providerState": "When call is made to get account contact details but user is not authorized",
       "request": {
         "method": "GET",
         "path": "/v1/accounts/9348878860/contactDetails"

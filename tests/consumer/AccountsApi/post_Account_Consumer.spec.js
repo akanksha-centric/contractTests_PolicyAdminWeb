@@ -7,10 +7,12 @@ const exp = require("constants")
 const LOG_LEVEL = process.env.LOG_LEVEL || "WARN"
 const { Pact, Matchers } = require("@pact-foundation/pact")
 const { eachLike,like, regex, string } = Matchers
-const { createAccountApiCall,postAccountApiError} = require("../../../src/consumer")
+const {postRequestApi,postRequestApiError401, createAccountApiCall,postAccountApiError} = require("../../../src/consumer")
 const { postAccountApiReqBody,postAccountApiResponse } = require("../../../src/getModels")
 const { up } = require("cli-color/move");
 const {response} = require("express");
+
+let apipath="/v1/accounts"
 
 describe("Create Account consumer test", () => {
     const mockprovider = new Pact({
@@ -32,11 +34,11 @@ describe("Create Account consumer test", () => {
 
     describe("When a call is made to create an account", () => {
         before(() => mockprovider.addInteraction({
-            state: "a request to create a new account",
-            uponReceiving: "a request to create a new account",
+            state: "When call is made to create an account",
+            uponReceiving: "200 OK Account gets created",
             withRequest: {
                 method: "POST",
-                path: "/v1/accounts",
+                path: apipath,
                 body: postAccountApiReqBody,
                 headers: {
                     "Content-Type": "application/json; charset=utf-8",
@@ -50,20 +52,20 @@ describe("Create Account consumer test", () => {
             },
         })
     )
-    it("creates a new user activity note", done => {
-        const suggestedAccount = createAccountApiCall("/v1/accounts")
+    it("it will return new account gets created", done => {
+        const suggestedAccount = postRequestApi(apipath,postAccountApiReqBody)
         expect(suggestedAccount).to.eventually.be.fulfilled.notify(done)
         })
     })
 
 
-    describe("When a call is made to create account and user is not authorized ", () => {
+    describe("When a call is made to create account but user is not authorized ", () => {
         before(() => mockprovider.addInteraction({
-            state: "When user is not authorized while creating new account",
-            uponReceiving: "When user is not authorized while creating new account",
+            state: "When call is made to create account but user is not authorized",
+            uponReceiving: "Unauthorized 401",
             withRequest: {
                 method: "POST",
-                path: "/v1/accounts",
+                path: apipath,
                 body: postAccountApiReqBody,
                 headers: {
                     "Content-Type": "application/json; charset=utf-8"
@@ -74,8 +76,8 @@ describe("Create Account consumer test", () => {
             },
         })
     )
-    it("returns a 401 unauthorized when call made to create user activity", () => {
-        return expect(postAccountApiError("/v1/accounts")).to.eventually.be.rejectedWith("Unauthorized")
+    it("returns a 401 unauthorized when call made to create new account", () => {
+        return expect(postRequestApiError401(apipath,postAccountApiReqBody)).to.eventually.be.rejectedWith("Unauthorized")
       })
     })
 

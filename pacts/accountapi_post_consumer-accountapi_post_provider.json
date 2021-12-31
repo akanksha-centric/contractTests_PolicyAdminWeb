@@ -7,8 +7,8 @@
   },
   "interactions": [
     {
-      "description": "a request to create a new account",
-      "providerState": "a request to create a new account",
+      "description": "200 OK Account gets created",
+      "providerState": "When call is made to create an account",
       "request": {
         "method": "POST",
         "path": "/v1/accounts",
@@ -88,8 +88,8 @@
       }
     },
     {
-      "description": "When user is not authorized while creating new account",
-      "providerState": "When user is not authorized while creating new account",
+      "description": "Unauthorized 401",
+      "providerState": "When call is made to create account but user is not authorized",
       "request": {
         "method": "POST",
         "path": "/v1/accounts",

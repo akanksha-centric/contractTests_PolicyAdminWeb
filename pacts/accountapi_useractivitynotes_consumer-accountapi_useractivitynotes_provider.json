@@ -7,8 +7,8 @@
   },
   "interactions": [
     {
-      "description": "a request to create a new activity note",
-      "providerState": "a request to create a new activity note",
+      "description": "200 OK Note created successfully",
+      "providerState": "When call is made to create a new user activity note",
       "request": {
         "method": "POST",
         "path": "/v1/accounts/9404268316/user_activities/notes",
@@ -117,8 +117,8 @@
       }
     },
     {
-      "description": "post request without authentication token",
-      "providerState": "When user is not authorized while adding activity account",
+      "description": "Unauthorized 401",
+      "providerState": "When call is made to insert an user activity note and user is not authorized",
       "request": {
         "method": "POST",
         "path": "/v1/accounts/9404268316/user_activities/notes",

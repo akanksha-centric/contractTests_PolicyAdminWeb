@@ -7,7 +7,7 @@ const exp = require("constants")
 const LOG_LEVEL = process.env.LOG_LEVEL || "WARN"
 const { Pact, Matchers } = require("@pact-foundation/pact")
 const { eachLike,like, regex, string } = Matchers
-const { getAccount, getErrorAccount } = require("../../../src/consumer")
+const {getRequestApi,getRequestApiError401, getAccount, getErrorAccount } = require("../../../src/consumer")
 const { getAccountContactDetailsResponse } = require("../../../src/getModels")
 const { configurationList,saveConfiguration } = require("../../../src/configurationManager")
 const { up } = require("cli-color/move");
@@ -15,7 +15,10 @@ const { response } = require("express");
 const { merge } = require("superagent");
 const { Console } = require("console");
 
-describe("Account Contact Details API consumer test", () => {
+//Define all constant
+let apipath="/v1/accounts/9348878860/contactDetails"
+
+describe("Account Contact Details Api consumer test", () => {
     const mockprovider = new Pact({
         consumer: "AccountAPI_consumer_contact",
         provider: "AccountAPI_provider_contact",
@@ -34,13 +37,13 @@ describe("Account Contact Details API consumer test", () => {
 
     afterEach(() => mockprovider.verify())
 
-    describe("When a call is made to API for a particular account id 9348878860", () => {
+    describe("When a call is made to get contact details with id 9348878860", () => {
         before(() => mockprovider.addInteraction({
-            state: "Has an contact details with ID 9348878860",
-            uponReceiving: "a request for an account with ID 9348878860",
+            state: "When call made to get account contact details for id 9348878860",
+            uponReceiving: "200 OK return account contact details",
             withRequest: {
                 method: "GET",
-                path: "/v1/accounts/9348878860/contactDetails",
+                path: apipath,
                 headers: { Authorization: "Bearer token" },
             },
             willRespondWith: {
@@ -50,20 +53,20 @@ describe("Account Contact Details API consumer test", () => {
             },
         })
     )
-        it("It will return an account with 200 response", done => {
-            const suggestedAccount = getAccount("/v1/accounts/9348878860/contactDetails")
+        it("It will return an account contact details with 200 response", done => {
+            const suggestedAccount = getRequestApi(apipath,getAccountContactDetailsResponse)
             expect(suggestedAccount).to.eventually.have.deep.property("emails[0].emailAddress","hgfh@ytuy.com")
             .notify(done)
         })
     })
 
-    describe("When a call is made to API for account 9348878860 and user is not authorized", () => {
+    describe("When a call is made to get account contact details and user is not authorized", () => {
         before(() => mockprovider.addInteraction({
-            state: "When user is not authorized",
-            uponReceiving: "a request without authentication token",
+            state: "When call is made to get account contact details but user is not authorized",
+            uponReceiving: "Unauthorized 401",
             withRequest: {
                 method: "GET",
-                path: "/v1/accounts/9348878860/contactDetails"
+                path: apipath
             },
             willRespondWith: {
                 status: 401,
@@ -71,7 +74,7 @@ describe("Account Contact Details API consumer test", () => {
         })
     )
         it("It will return a 401 unauthorized response", () => {
-            return expect(getErrorAccount("/v1/accounts/9348878860/contactDetails")).to.eventually.be.rejectedWith("Unauthorized")
+            return expect(getRequestApiError401(apipath)).to.eventually.be.rejectedWith("Unauthorized")
         })
     })
 

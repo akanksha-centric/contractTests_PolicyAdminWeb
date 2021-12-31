@@ -30,12 +30,12 @@ const serverUrl = configurationList.accountapiBaseUrl
                 next()
               },
               stateHandlers: {
-                 "a request to create a new activity note": () => {
+                 "When call is made to create a new user activity note": () => {
                     token
                     postUserActivityNotesResponse
                     return Promise.resolve(`New note is created`)
                  },
-                 "When user is not authorized while adding activity account": () => {
+                 "When call is made to insert an user activity note and user is not authorized": () => {
                   token = ""
                   Promise.resolve(`Invalid bearer token generated`)
                 }, 

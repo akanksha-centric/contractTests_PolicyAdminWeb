@@ -7,10 +7,13 @@ const exp = require("constants")
 const LOG_LEVEL = process.env.LOG_LEVEL || "WARN"
 const { Pact, Matchers } = require("@pact-foundation/pact")
 const { eachLike, regex, string } = Matchers
-const { getAccount, getErrorAccount } = require("../../../src/consumer")
+const {getRequestApi,getRequestApiError401, getAccount, getErrorAccount } = require("../../../src/consumer")
 const { getAccountInfoResponse } = require("../../../src/getModels")
 const { up } = require("cli-color/move");
 const { response } = require("express");
+
+let apipath="/v1/accounts/9348878860"
+let apipathFor404="/v1/accounts/93488788"
 
 describe("Account API consumer test", () => {
     const mockprovider = new Pact({
@@ -30,13 +33,13 @@ describe("Account API consumer test", () => {
 
     afterEach(() => mockprovider.verify())
 
-    describe("When a call is made to API for a particular account id 9348878860", () => {
+    describe("When a call is made to get account info for id 9348878860", () => {
         before(() => mockprovider.addInteraction({
-            state: "Has an account with ID 9348878860",
-            uponReceiving: "a request for an account with ID 9348878860",
+            state: "When call made to get account info for id 9348878860",
+            uponReceiving: "200 OK return account info for id 9348878860",
             withRequest: {
                 method: "GET",
-                path: "/v1/accounts/9348878860",
+                path: apipath,
                 headers: { Authorization: "Bearer token" },
             },
             willRespondWith: {
@@ -46,19 +49,19 @@ describe("Account API consumer test", () => {
             },
         })
     )
-        it("It will return an account with 200 response", done => {
-            const suggestedAccount = getAccount("/v1/accounts/9348878860")
+        it("It will return an account info with 200 response", done => {
+            const suggestedAccount = getRequestApi(apipath,getAccountInfoResponse)
             expect(suggestedAccount).to.eventually.have.deep.property("accountId", 9348878860).notify(done)
         })
     })
 
-    describe("When a call is made to wrong account which is not present in database", () => {
+    describe("When a call is made to get account info but account not exist", () => {
         before(() => mockprovider.addInteraction({
-            state: "When a call is made to wrong account",
-            uponReceiving: "a request for invalid account",
+            state: "When call is made to get account info but account not exist",
+            uponReceiving: "404 Not found ",
             withRequest: {
                 method: "GET",
-                path: "/v1/accounts/93488788",
+                path: apipathFor404,
                 headers: { Authorization: "Bearer token" },
             },
             willRespondWith: {
@@ -66,19 +69,19 @@ describe("Account API consumer test", () => {
             },
         })
     )
-        it("It will return a 404 Not Found response", done => {
-            const suggestedAccount = getAccount("/v1/accounts/93488788")
+        it("It will return a 404 Not Found when call made to get account info", done => {
+            const suggestedAccount = getRequestApi(apipathFor404,getAccountInfoResponse)
             expect(suggestedAccount).to.eventually.be.a("null").notify(done)
         })
     })
 
-    describe("When a call is made to API for account 9348878860 and user is not authorized", () => {
+    describe("When a call is made to get account info and user is not authorized", () => {
         before(() => mockprovider.addInteraction({
-            state: "When user is not authorized",
-            uponReceiving: "a request without authentication token",
+            state: "When call is made to get account info but user is not authorized",
+            uponReceiving: "Unauthorized 401",
             withRequest: {
                 method: "GET",
-                path: "/v1/accounts/9348878860"
+                path: apipath
             },
             willRespondWith: {
                 status: 401,
@@ -86,7 +89,7 @@ describe("Account API consumer test", () => {
         })
     )
         it("It will return a 401 unauthorized response", () => {
-            return expect(getErrorAccount("/v1/accounts/9348878860")).to.eventually.be.rejectedWith("Unauthorized")
+            return expect(getRequestApiError401(apipath)).to.eventually.be.rejectedWith("Unauthorized")
         })
     })
 

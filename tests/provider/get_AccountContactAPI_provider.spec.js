@@ -31,13 +31,13 @@ const serverUrl = configurationList.accountapiBaseUrl
               },
 
               stateHandlers: {
-                "When user is not authorized": () => {
+                "When call is made to get account contact details but user is not authorized": () => {
                     token = ""
                     Promise.resolve(`Invalid bearer token generated`)
                 },
-                "Has an contact details with ID 9348878860": () => {
+                "When call made to get account contact details for id 9348878860": () => {
                     token
-                    getAccountInfoResponse//importData()
+                    getAccountInfoResponse
                     return Promise.resolve(`Contacts in account are present`)
                 } 
               },

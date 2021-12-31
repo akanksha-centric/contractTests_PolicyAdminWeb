@@ -9,10 +9,10 @@ const { server } = require("../../src/provider.js")
 
 const SERVER_URL = configurationList.accountapiBaseUrl
 
-   server.listen(5000, () => {
-    //activityData()
-    console.log(`Account API Contact Service listening on ${SERVER_URL}`)
-   })
+  //  server.listen(5000, () => {
+  //   //activityData()
+  //   console.log(`Account API Contact Service listening on ${SERVER_URL}`)
+  //  })
 
 // Verify that the provider meets all consumer expectations
  describe("Quick search Account api pact verification", () => {
@@ -30,12 +30,12 @@ const SERVER_URL = configurationList.accountapiBaseUrl
                 next()
               },
               stateHandlers: {
-                 "Quick search of an account": () => {
+                 "When call is made for a quick search an account": () => {
                     token
                     postQuickSearchResponse
                     return Promise.resolve(`Quick search is done`)
                  },
-                 "When user is not authorized while quick search": () => {
+                 "When call is made to quick search and user is not authorized": () => {
                   token = ""
                   Promise.resolve(`Invalid bearer token generated`)
                 }, 

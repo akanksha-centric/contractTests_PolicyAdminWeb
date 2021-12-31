@@ -30,12 +30,12 @@ const serverUrl = configurationList.accountapiBaseUrl
                 next()
               },
               stateHandlers: {
-                 "a request to create a new account": () => {
+                 "When call is made to create an account": () => {
                     token
                     postUserActivityNotesResponse
                     return Promise.resolve(`New account is created`)
                  },
-                 "When user is not authorized while creating new account": () => {
+                 "When call is made to create account but user is not authorized": () => {
                   token = ""
                   Promise.resolve(`Invalid bearer token generated`)
                 }, 

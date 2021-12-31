@@ -7,8 +7,8 @@
   },
   "interactions": [
     {
-      "description": "a request for an account with ID 9348878860",
-      "providerState": "Has an account with ID 9348878860",
+      "description": "200 OK return account info for id 9348878860",
+      "providerState": "When call made to get account info for id 9348878860",
       "request": {
         "method": "GET",
         "path": "/v1/accounts/9348878860",
@@ -69,8 +69,8 @@
       }
     },
     {
-      "description": "a request for invalid account",
-      "providerState": "When a call is made to wrong account",
+      "description": "404 Not found ",
+      "providerState": "When call is made to get account info but account not exist",
       "request": {
         "method": "GET",
         "path": "/v1/accounts/93488788",
@@ -85,8 +85,8 @@
       }
     },
     {
-      "description": "a request without authentication token",
-      "providerState": "When user is not authorized",
+      "description": "Unauthorized 401",
+      "providerState": "When call is made to get account info but user is not authorized",
       "request": {
         "method": "GET",
         "path": "/v1/accounts/9348878860"

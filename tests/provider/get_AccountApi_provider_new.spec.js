@@ -33,18 +33,18 @@ server.listen(5000, () => {
               },
 
               stateHandlers: {
-                "When user is not authorized": () => {
+                "When call is made to get account info but user is not authorized": () => {
                     token = ""
                     Promise.resolve(`Invalid bearer token generated`)
                 },
-                "Has an account with ID 9348878860": () => {
+                "When call made to get account info for id 9348878860": () => {
                     token
-                    getAccountInfoResponse//importData()
+                    getAccountInfoResponse
                     return Promise.resolve(`Account is present`)
                 },
-                "When a call is made to wrong account": () => {
+                "When call is made to get account info but account not exist": () => {
                     token
-                    getAccountInfoResponse//importData()
+                    getAccountInfoResponse
                     return Promise.resolve(`Account is not present`)
                 }
               },

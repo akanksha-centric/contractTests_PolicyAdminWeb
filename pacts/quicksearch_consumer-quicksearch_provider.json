@@ -7,8 +7,8 @@
   },
   "interactions": [
     {
-      "description": "a request for a quick search account",
-      "providerState": "Quick search of an account",
+      "description": "200 OK List of account",
+      "providerState": "When call is made for a quick search an account",
       "request": {
         "method": "POST",
         "path": "/v1/accounts/actions/quicksearch",
@@ -79,8 +79,8 @@
       }
     },
     {
-      "description": "When user is not authorized while quick search",
-      "providerState": "When user is not authorized while quick search",
+      "description": "Unauthorized 401",
+      "providerState": "When call is made to quick search and user is not authorized",
       "request": {
         "method": "POST",
         "path": "/v1/accounts/actions/quicksearch",

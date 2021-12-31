@@ -7,10 +7,12 @@ const exp = require("constants")
 const LOG_LEVEL = process.env.LOG_LEVEL || "WARN"
 const { Pact, Matchers } = require("@pact-foundation/pact")
 const { eachLike,like, regex, string } = Matchers
-const { postQuickSerach, postQuickSearchApiError } = require("../../../src/consumer")
+const {postRequestApi,postRequestApiError401, postQuickSerach, postQuickSearchApiError } = require("../../../src/consumer")
 const { postQuickSearchApiReqBody, postQuickSearchResponse } = require("../../../src/getModels")
 const { up } = require("cli-color/move");
 const {response} = require("express");
+
+let apipath="/v1/accounts/actions/quicksearch"
 
 describe("Quick search account API", () => {
     const mockprovider = new Pact({
@@ -32,11 +34,11 @@ describe("Quick search account API", () => {
 
     describe("When a call is made for a quick search account", () => {
         before(() => mockprovider.addInteraction({
-            state: "Quick search of an account",
-            uponReceiving: "a request for a quick search account",
+            state: "When call is made for a quick search an account",
+            uponReceiving: "200 OK List of account",
             withRequest: {
                 method: "POST",
-                path: "/v1/accounts/actions/quicksearch",
+                path: apipath,
                 body: postQuickSearchApiReqBody,
                 headers: {
                     "Content-Type": "application/json; charset=utf-8",
@@ -51,7 +53,7 @@ describe("Quick search account API", () => {
         })
     )
     it("quick search on account Api", done => {
-        const suggestedAccount = postQuickSerach("/v1/accounts/actions/quicksearch")
+        const suggestedAccount = postRequestApi(apipath,postQuickSearchApiReqBody)
         expect(suggestedAccount).to.eventually.be.fulfilled.notify(done)
         })
     })
@@ -59,11 +61,11 @@ describe("Quick search account API", () => {
 
     describe("When a call is made to quick search and user is not authorized ", () => {
         before(() => mockprovider.addInteraction({
-            state: "When user is not authorized while quick search",
-            uponReceiving: "When user is not authorized while quick search",
+            state: "When call is made to quick search and user is not authorized",
+            uponReceiving: "Unauthorized 401",
             withRequest: {
                 method: "POST",
-                path: "/v1/accounts/actions/quicksearch",
+                path:apipath,
                 body: postQuickSearchApiReqBody,
                 headers: {
                     "Content-Type": "application/json; charset=utf-8"
@@ -74,8 +76,8 @@ describe("Quick search account API", () => {
             },
         })
     )
-    it("returns a 401 unauthorized when call made to create user activity", () => {
-        return expect(postQuickSearchApiError("/v1/accounts/actions/quicksearch")).to.eventually.be.rejectedWith("Unauthorized")
+    it("returns a 401 unauthorized when call made for quick search", () => {
+        return expect(postRequestApiError401(apipath,postQuickSearchApiReqBody)).to.eventually.be.rejectedWith("Unauthorized")
       })
     })
 

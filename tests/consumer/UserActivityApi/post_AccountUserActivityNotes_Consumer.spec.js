@@ -7,10 +7,12 @@ const exp = require("constants")
 const LOG_LEVEL = process.env.LOG_LEVEL || "WARN"
 const { Pact, Matchers } = require("@pact-foundation/pact")
 const { eachLike,like, regex, string } = Matchers
-const { createApiCall,postApiError } = require("../../../src/consumer")
+const {postRequestApi,postRequestApiError401, createApiCall,postApiError } = require("../../../src/consumer")
 const { postUserActivityNotesReqBody,postUserActivityNotesResponse } = require("../../../src/getModels")
 const { up } = require("cli-color/move");
 const {response} = require("express");
+
+let apipath="/v1/accounts/9404268316/user_activities/notes"
 
 describe("Account User Activity Notes consumer test", () => {
     const mockprovider = new Pact({
@@ -30,13 +32,13 @@ describe("Account User Activity Notes consumer test", () => {
 
     afterEach(() => mockprovider.verify())
 
-    describe("When a call is made to insert user activity note", () => {
+    describe("When a call is made to create a new user activity note", () => {
         before(() => mockprovider.addInteraction({
-            state: "a request to create a new activity note",
-            uponReceiving: "a request to create a new activity note",
+            state: "When call is made to create a new user activity note",
+            uponReceiving: "200 OK Note created successfully",
             withRequest: {
                 method: "POST",
-                path: "/v1/accounts/9404268316/user_activities/notes",
+                path: apipath,
                 body: postUserActivityNotesReqBody,
                 headers: {
                     "Content-Type": "application/json; charset=utf-8",
@@ -51,19 +53,19 @@ describe("Account User Activity Notes consumer test", () => {
         })
     )
     it("creates a new user activity note", done => {
-        const suggestedAccount = createApiCall("/v1/accounts/9404268316/user_activities/notes")
+        const suggestedAccount = postRequestApi(apipath,postUserActivityNotesReqBody)
         expect(suggestedAccount).to.eventually.be.fulfilled.notify(done)
         })
     })
 
 
-    describe("When a call is made to insert user activity note and user is not authorized ", () => {
+    describe("When a call is made to insert an user activity note and user is not authorized ", () => {
         before(() => mockprovider.addInteraction({
-            state: "When user is not authorized while adding activity account",
-            uponReceiving: "post request without authentication token",
+            state: "When call is made to insert an user activity note and user is not authorized",
+            uponReceiving: "Unauthorized 401",
             withRequest: {
                 method: "POST",
-                path: "/v1/accounts/9404268316/user_activities/notes",
+                path: apipath,
                 body: postUserActivityNotesReqBody,
                 headers: {
                     "Content-Type": "application/json; charset=utf-8"
@@ -75,7 +77,7 @@ describe("Account User Activity Notes consumer test", () => {
         })
     )
     it("returns a 401 unauthorized when call made to create user activity", () => {
-        return expect(postApiError("/v1/accounts/9404268316/user_activities/notes")).to.eventually.be.rejectedWith("Unauthorized")
+        return expect(postRequestApiError401(apipath,postUserActivityNotesReqBody)).to.eventually.be.rejectedWith("Unauthorized")
       })
     })
 
