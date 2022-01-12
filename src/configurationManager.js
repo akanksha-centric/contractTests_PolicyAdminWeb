@@ -18,10 +18,13 @@ const saveConfiguration =configList=> {
     fs.writeFileSync('./src/configurations.json', configJSON)
   }
 
+  
+
 
 
 module.exports = {
     server,
     saveConfiguration,
     configurationList
+    
 }

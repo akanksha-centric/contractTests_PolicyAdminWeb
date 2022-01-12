@@ -1,267 +1,10 @@
-I, [2021-12-31T04:31:43.708173 #1532]  INFO -- : Registered expected interaction POST /v1/accounts/9404268316/user_activities/notes
-D, [2021-12-31T04:31:43.708173 #1532] DEBUG -- : {
-  "description": "200 OK Note created successfully",
-  "providerState": "When call is made to create a new user activity note",
-  "request": {
-    "method": "POST",
-    "path": "/v1/accounts/9404268316/user_activities/notes",
-    "headers": {
-      "Content-Type": "application/json; charset=utf-8",
-      "Authorization": "Bearer token"
-    },
-    "body": {
-      "isExpanded": false,
-      "showMore": false,
-      "isSelected": false,
-      "displayCommentBox": false,
-      "displayActivityDropdown": false,
-      "isReferralEditing": false,
-      "datePipe": {
-        "locale": "en-US"
-      },
-      "activityType": "Note",
-      "activityDtTm": "2021-12-01T16:28:31.000Z",
-      "note": {
-        "isEditing": false,
-        "datePipe": {
-          "locale": "en-US"
-        },
-        "isEdited": false,
-        "editedDate": null,
-        "editedTime": null,
-        "notes": "<p>test pact</p>"
-      },
-      "contacts": [
-
-      ],
-      "activityFlag": "Normal",
-      "dueDate": null,
-      "sendTo": "Services"
-    }
-  },
-  "response": {
-    "status": 200,
-    "headers": {
-      "Content-Type": "application/json; charset=utf-8"
-    },
-    "body": {
-      "json_class": "Pact::SomethingLike",
-      "contents": {
-        "activityId": 9408850982,
-        "activityType": "Note",
-        "activityFlag": "Normal",
-        "objectType": "Account",
-        "productName": "",
-        "note": {
-          "noteId": 9408850983,
-          "notes": "<p>test pact</p>",
-          "createdDtTm": "2021-12-21T13:44:16.8033333",
-          "updatedDtTm": "2021-12-21T13:44:16.8033333",
-          "updatedBy": {
-            "userId": "1d071ec3-15ff-4e3f-94e5-7991d4ff04ef",
-            "agencyAMSId": null,
-            "userType": null,
-            "userName": "Akanksha Sharma",
-            "systemName": null,
-            "department": "Information Technology (Contract Developer)",
-            "title": null
-          },
-          "noteType": "ActivityNote",
-          "status": "Added"
-        },
-        "comments": [
-
-        ],
-        "createdBy": {
-          "userId": "1d071ec3-15ff-4e3f-94e5-7991d4ff04ef",
-          "agencyAMSId": null,
-          "userType": null,
-          "userName": "Akanksha Sharma",
-          "systemName": null,
-          "department": "Information Technology (Contract Developer)",
-          "title": null
-        },
-        "createdDtTm": "2021-12-21T13:44:16.5",
-        "attachments": null,
-        "policyIdentifier": null,
-        "policyActivityId": null,
-        "insuranceItemId": null,
-        "policyItemId": null,
-        "policyItemType": null,
-        "updatedDtTm": "2021-12-21T13:44:16.5",
-        "activityDtTm": "2021-12-01T16:28:31",
-        "contacts": null,
-        "noteActivityId": 9408850985,
-        "sendTo": "Services",
-        "callActivityId": null,
-        "isCallInBound": null,
-        "emailActivityId": null,
-        "emailSubject": null,
-        "isEmailInBound": null,
-        "meetingActivityId": null,
-        "taskActivityId": null,
-        "taskActivityReference": null,
-        "taskType": null,
-        "dueDate": null
-      }
-    }
-  },
-  "metadata": null
-}
-I, [2021-12-31T04:31:43.724176 #1532]  INFO -- : Received request POST /v1/accounts/9404268316/user_activities/notes
-D, [2021-12-31T04:31:43.725174 #1532] DEBUG -- : {
-  "path": "/v1/accounts/9404268316/user_activities/notes",
-  "query": "",
-  "method": "post",
-  "body": {
-    "isExpanded": false,
-    "showMore": false,
-    "isSelected": false,
-    "displayCommentBox": false,
-    "displayActivityDropdown": false,
-    "isReferralEditing": false,
-    "datePipe": {
-      "locale": "en-US"
-    },
-    "activityType": "Note",
-    "activityDtTm": "2021-12-01T16:28:31.000Z",
-    "note": {
-      "isEditing": false,
-      "datePipe": {
-        "locale": "en-US"
-      },
-      "isEdited": false,
-      "editedDate": null,
-      "editedTime": null,
-      "notes": "<p>test pact</p>"
-    },
-    "contacts": [
-
-    ],
-    "activityFlag": "Normal",
-    "dueDate": null,
-    "sendTo": "Services"
-  },
-  "headers": {
-    "Content-Length": "444",
-    "Content-Type": "application/json; charset=utf-8",
-    "Host": "localhost:56272",
-    "Accept-Encoding": "gzip, deflate",
-    "User-Agent": "node-superagent/3.8.3",
-    "Authorization": "Bearer token",
-    "Connection": "close",
-    "Version": "HTTP/1.1"
-  }
-}
-I, [2021-12-31T04:31:43.727173 #1532]  INFO -- : Found matching response for POST /v1/accounts/9404268316/user_activities/notes
-D, [2021-12-31T04:31:43.728173 #1532] DEBUG -- : {
-  "status": 200,
-  "headers": {
-    "Content-Type": "application/json; charset=utf-8"
-  },
-  "body": {
-    "json_class": "Pact::SomethingLike",
-    "contents": {
-      "activityId": 9408850982,
-      "activityType": "Note",
-      "activityFlag": "Normal",
-      "objectType": "Account",
-      "productName": "",
-      "note": {
-        "noteId": 9408850983,
-        "notes": "<p>test pact</p>",
-        "createdDtTm": "2021-12-21T13:44:16.8033333",
-        "updatedDtTm": "2021-12-21T13:44:16.8033333",
-        "updatedBy": {
-          "userId": "1d071ec3-15ff-4e3f-94e5-7991d4ff04ef",
-          "agencyAMSId": null,
-          "userType": null,
-          "userName": "Akanksha Sharma",
-          "systemName": null,
-          "department": "Information Technology (Contract Developer)",
-          "title": null
-        },
-        "noteType": "ActivityNote",
-        "status": "Added"
-      },
-      "comments": [
-
-      ],
-      "createdBy": {
-        "userId": "1d071ec3-15ff-4e3f-94e5-7991d4ff04ef",
-        "agencyAMSId": null,
-        "userType": null,
-        "userName": "Akanksha Sharma",
-        "systemName": null,
-        "department": "Information Technology (Contract Developer)",
-        "title": null
-      },
-      "createdDtTm": "2021-12-21T13:44:16.5",
-      "attachments": null,
-      "policyIdentifier": null,
-      "policyActivityId": null,
-      "insuranceItemId": null,
-      "policyItemId": null,
-      "policyItemType": null,
-      "updatedDtTm": "2021-12-21T13:44:16.5",
-      "activityDtTm": "2021-12-01T16:28:31",
-      "contacts": null,
-      "noteActivityId": 9408850985,
-      "sendTo": "Services",
-      "callActivityId": null,
-      "isCallInBound": null,
-      "emailActivityId": null,
-      "emailSubject": null,
-      "isEmailInBound": null,
-      "meetingActivityId": null,
-      "taskActivityId": null,
-      "taskActivityReference": null,
-      "taskType": null,
-      "dueDate": null
-    }
-  }
-}
-I, [2021-12-31T04:31:43.741170 #1532]  INFO -- : Verifying - interactions matched
-I, [2021-12-31T04:31:43.752173 #1532]  INFO -- : Cleared interactions
-I, [2021-12-31T04:31:43.767168 #1532]  INFO -- : Registered expected interaction POST /v1/accounts/9404268316/user_activities/notes
-D, [2021-12-31T04:31:43.767168 #1532] DEBUG -- : {
+I, [2022-01-12T03:00:58.247956 #15020]  INFO -- : Registered expected interaction GET /v1/accounts/9348878860
+D, [2022-01-12T03:00:58.248949 #15020] DEBUG -- : {
   "description": "Unauthorized 401",
-  "providerState": "When call is made to insert an user activity note and user is not authorized",
+  "providerState": "When call is made to get account info but user is not authorized",
   "request": {
-    "method": "POST",
-    "path": "/v1/accounts/9404268316/user_activities/notes",
-    "headers": {
-      "Content-Type": "application/json; charset=utf-8"
-    },
-    "body": {
-      "isExpanded": false,
-      "showMore": false,
-      "isSelected": false,
-      "displayCommentBox": false,
-      "displayActivityDropdown": false,
-      "isReferralEditing": false,
-      "datePipe": {
-        "locale": "en-US"
-      },
-      "activityType": "Note",
-      "activityDtTm": "2021-12-01T16:28:31.000Z",
-      "note": {
-        "isEditing": false,
-        "datePipe": {
-          "locale": "en-US"
-        },
-        "isEdited": false,
-        "editedDate": null,
-        "editedTime": null,
-        "notes": "<p>test pact</p>"
-      },
-      "contacts": [
-
-      ],
-      "activityFlag": "Normal",
-      "dueDate": null,
-      "sendTo": "Services"
-    }
+    "method": "GET",
+    "path": "/v1/accounts/9348878860"
   },
   "response": {
     "status": 401,
@@ -270,56 +13,25 @@ D, [2021-12-31T04:31:43.767168 #1532] DEBUG -- : {
   },
   "metadata": null
 }
-I, [2021-12-31T04:31:43.776174 #1532]  INFO -- : Received request POST /v1/accounts/9404268316/user_activities/notes
-D, [2021-12-31T04:31:43.777173 #1532] DEBUG -- : {
-  "path": "/v1/accounts/9404268316/user_activities/notes",
+I, [2022-01-12T03:00:58.258940 #15020]  INFO -- : Received request GET /v1/accounts/9348878860
+D, [2022-01-12T03:00:58.258940 #15020] DEBUG -- : {
+  "path": "/v1/accounts/9348878860",
   "query": "",
-  "method": "post",
-  "body": {
-    "isExpanded": false,
-    "showMore": false,
-    "isSelected": false,
-    "displayCommentBox": false,
-    "displayActivityDropdown": false,
-    "isReferralEditing": false,
-    "datePipe": {
-      "locale": "en-US"
-    },
-    "activityType": "Note",
-    "activityDtTm": "2021-12-01T16:28:31.000Z",
-    "note": {
-      "isEditing": false,
-      "datePipe": {
-        "locale": "en-US"
-      },
-      "isEdited": false,
-      "editedDate": null,
-      "editedTime": null,
-      "notes": "<p>test pact</p>"
-    },
-    "contacts": [
-
-    ],
-    "activityFlag": "Normal",
-    "dueDate": null,
-    "sendTo": "Services"
-  },
+  "method": "get",
   "headers": {
-    "Content-Length": "444",
-    "Content-Type": "application/json; charset=utf-8",
-    "Host": "localhost:56272",
+    "Host": "localhost:63767",
     "Accept-Encoding": "gzip, deflate",
     "User-Agent": "node-superagent/3.8.3",
     "Connection": "close",
     "Version": "HTTP/1.1"
   }
 }
-I, [2021-12-31T04:31:43.777173 #1532]  INFO -- : Found matching response for POST /v1/accounts/9404268316/user_activities/notes
-D, [2021-12-31T04:31:43.778171 #1532] DEBUG -- : {
+I, [2022-01-12T03:00:58.258940 #15020]  INFO -- : Found matching response for GET /v1/accounts/9348878860
+D, [2022-01-12T03:00:58.259942 #15020] DEBUG -- : {
   "status": 401,
   "headers": {
   }
 }
-I, [2021-12-31T04:31:43.786174 #1532]  INFO -- : Verifying - interactions matched
-I, [2021-12-31T04:31:43.797177 #1532]  INFO -- : Cleared interactions
-I, [2021-12-31T04:31:43.808179 #1532]  INFO -- : Writing pact for AccountAPI_UserActivityNotes_provider to C:/contractTests_PolicyAdminWeb/pacts/accountapi_useractivitynotes_consumer-accountapi_useractivitynotes_provider.json
+I, [2022-01-12T03:00:58.269932 #15020]  INFO -- : Verifying - interactions matched
+I, [2022-01-12T03:00:58.280930 #15020]  INFO -- : Cleared interactions
+I, [2022-01-12T03:00:58.291918 #15020]  INFO -- : Merging interactions into pact for GetAccountInfo_provider at C:/contractTests_Framework/pacts/getaccountinfo_consumer-getaccountinfo_provider.json

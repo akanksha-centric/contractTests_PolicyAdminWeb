@@ -26,7 +26,6 @@ const getRequestApiError401 = function(path) {
       .then(res => res.status);
 }
 const postRequestApi = function(path,jsonBody) {
-  console.log(`${getApiEndPoint()}${path}`)
   return request
     .post(`${getApiEndPoint()}${path}`)
     .set(authHeader)
@@ -36,7 +35,6 @@ const postRequestApi = function(path,jsonBody) {
     
 }
 const postRequestApiError401 = function(path,jsonBody) {
-  console.log(`${getApiEndPoint()}${path}`)
   return request
     .post(`${getApiEndPoint()}${path}`)
     //.set(authHeader)

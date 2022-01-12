@@ -2,19 +2,21 @@
   "name": "e2e",
   "version": "1.0.0",
   "dependencies": {
-    "axios": "^0.24.0"
+    "axios": "^0.24.0",
+    "request": "^2.88.2"
   },
   "scripts": {
     "test": "npm run test:consumer && npm run pact:publish && npm run test:provider",
-    "test:consumer": "mocha --exit --timeout 30000 tests/consumer/**/*.js",
+    "test:consumer": "mocha --exit --timeout 30000 tests/consumer/**/consumer.spec.js",
     "pact:publish": "npx pact-broker publish ./pacts --consumer-app-version=\"1.0.0\" --tag AccountAPI --broker-base-url=https://centricconsulting.pactflow.io --broker-password=mg_43dusgdYRUxGStUei-w",
-    "test:provider": "mocha --exit --timeout 30000 tests/provider/*.js",
+    "test:provider": "mocha --exit --timeout 30000 tests/provider/provider.spec.js",
     "can-i-deploy": "npm run can-i-deploy:consumer && npm run can-i-deploy:provider",
     "can-i-deploy:consumer": "pact-broker can-i-deploy --pacticipant 'Matching Service' --latest --broker-base-url https://test.pact.dius.com.au --broker-username dXfltyFMgNOFZAxr8io9wJ37iUpY42M --broker-password O5AIZWxelWbLvqMd8PkAVycBJh2Psyg1",
     "can-i-deploy:provider": "pact-broker can-i-deploy --pacticipant 'Animal Profile Service' --latest --broker-base-url https://test.pact.dius.com.au --broker-username dXfltyFMgNOFZAxr8io9wJ37iUpY42M --broker-password O5AIZWxelWbLvqMd8PkAVycBJh2Psyg1",
     "api": "concurrently 'npm run provider' 'npm run consumer'",
     "consumer": "node ./consumerService.js",
-    "provider": "node ./providerService.js"
+    "provider": "node ./providerService.js",
+    "gettoken": "node ./getToken.js"
   },
   "author": "Akanksha Sharma",
   "license": "MIT",

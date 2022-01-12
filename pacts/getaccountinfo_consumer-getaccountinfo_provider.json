@@ -1,0 +1,106 @@
+{
+  "consumer": {
+    "name": "GetAccountInfo_consumer"
+  },
+  "provider": {
+    "name": "GetAccountInfo_provider"
+  },
+  "interactions": [
+    {
+      "description": "200 OK return account info for id 9348878860",
+      "providerState": "When call made to get account info for id 9348878860",
+      "request": {
+        "method": "GET",
+        "path": "/v1/accounts/9348878860",
+        "headers": {
+          "Authorization": "Bearer token"
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8"
+        },
+        "body": {
+          "accountId": 9348878860,
+          "accountNumber": "A-04218-07052021731302",
+          "domesticAbuse": false,
+          "effectiveDate": "2021-07-05T03:07:38.3433333",
+          "expirationDate": "9999-12-31T00:00:00",
+          "accountStatus": "Open",
+          "agencyRegion": "0",
+          "agencyCode": "4218",
+          "agencyName": "HUPE INSURANCE SERVICES ",
+          "agencyContactGuid": "acf4daa1-c9a6-476d-a542-1785f7f34def",
+          "agencyContactInfo": {
+            "userId": "acf4daa1-c9a6-476d-a542-1785f7f34def",
+            "agencyAMSId": null,
+            "userType": null,
+            "userName": "RYAN DAVIS",
+            "systemName": null,
+            "department": null,
+            "title": null
+          },
+          "underwriter": {
+            "userId": "6626bd76-e1cf-4aa9-809d-7d5a0faff18a",
+            "agencyAMSId": null,
+            "userType": null,
+            "userName": "Taylor Hoehn",
+            "systemName": null,
+            "department": "Personal Lines Underwriting",
+            "title": null
+          },
+          "serviceRepresentative": {
+            "userId": "e78d36b2-601e-4627-b70a-1cf86960fb05",
+            "agencyAMSId": null,
+            "userType": null,
+            "userName": null,
+            "systemName": null,
+            "department": null,
+            "title": null
+          },
+          "additionalFields": null,
+          "hasValidationErrors": false,
+          "validationMessages": [
+
+          ],
+          "accountType": "Personal"
+        }
+      }
+    },
+    {
+      "description": "404 Not found",
+      "providerState": "When call is made to get account info but account not exist",
+      "request": {
+        "method": "GET",
+        "path": "/v1/accounts/93488788",
+        "headers": {
+          "Authorization": "Bearer token"
+        }
+      },
+      "response": {
+        "status": 404,
+        "headers": {
+        }
+      }
+    },
+    {
+      "description": "Unauthorized 401",
+      "providerState": "When call is made to get account info but user is not authorized",
+      "request": {
+        "method": "GET",
+        "path": "/v1/accounts/9348878860"
+      },
+      "response": {
+        "status": 401,
+        "headers": {
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}
